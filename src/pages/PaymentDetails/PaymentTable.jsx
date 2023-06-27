@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import { DataGrid } from "@mui/x-data-grid";
 
@@ -23,19 +23,110 @@ const columns = [
 ];
 
 const rows = [
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
-  { id: 1, transferId: "Child Study", name: "Leo Grace", amount:5000, date: "21 March 2018 at 8.00pm",status:"Transferred" },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
+  {
+    id: 1,
+    transferId: "Child Study",
+    name: "Leo Grace",
+    amount: 5000,
+    date: "21 March 2018 at 8.00pm",
+    status: "Transferred",
+  },
 ];
 
 const PaymentTable = () => {
@@ -53,7 +144,7 @@ const PaymentTable = () => {
         checkboxSelection
       />
     </div>
-  )
-}
+  );
+};
 
-export default PaymentTable
+export default PaymentTable;

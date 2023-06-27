@@ -3,15 +3,13 @@ import React from "react";
 import { useState } from "react";
 
 import { BiSolidDashboard } from "react-icons/bi";
-import { MdChildCare } from "react-icons/md";
-import { MdOutlinePayment } from "react-icons/md";
+import { MdChildCare, MdOutlinePayment } from "react-icons/md";
 import { FcDonate } from "react-icons/fc";
 import { FiLogOut } from "react-icons/fi";
 
 import { Link } from "react-router-dom";
 
 import "./Sidebar.css";
-
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Sidebar = () => {

@@ -2,13 +2,14 @@ import React from "react";
 
 import { useState } from "react";
 
-import { DataGrid } from "@mui/x-data-grid";
 import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import { GiCancel } from "react-icons/gi";
 
+import { DataGrid } from "@mui/x-data-grid";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+
 import { Link } from "react-router-dom";
 
 function ChildModal() {

@@ -12,7 +12,6 @@ const NavBar = () => {
           <span className="search-icon flex-center">
             <BiSearch />
           </span>
-
           <input
             className="form-control me-2 search-input"
             type="search"

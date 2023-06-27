@@ -1,0 +1,39 @@
+.home-icon{
+    font-size: 2.6rem;
+}
+
+.content-name{
+    font-size: small;
+    font-weight: 500;
+}
+
+.content-number{
+    font-size: 2.6rem;
+}
+
+.bg-lightBlue{
+    background-color: rgba(172, 184, 244, 0.895);
+    color:rgb(134, 119, 248) ;
+}
+
+.bg-lightRed {
+    background-color: rgba(249, 160, 160, 0.927);
+    color: red;
+}
+
+.bg-yellow {
+    background-color: rgb(252, 216, 170);
+    color: rgba(255, 145, 0, 0.785);
+}
+
+.bg-blue{
+    background-color: rgb(175, 203, 246);
+    color: rgb(44, 104, 245);
+}
+
+.box-size{
+    width: 17%;
+    height: 90%;
+    border-radius: 8px;
+    border: none;
+}

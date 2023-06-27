@@ -1,0 +1,20 @@
+a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.nav-item {
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.nav-item:hover{
+    background-color: rgb(245, 69, 69);
+    cursor: pointer;
+}
+
+
+.active {
+    background-color: rgb(245, 69, 69);
+}

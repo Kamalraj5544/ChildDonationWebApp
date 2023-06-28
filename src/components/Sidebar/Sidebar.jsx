@@ -18,71 +18,71 @@ const Sidebar = () => {
   return (
     <div className="d-flex justify-content-between flex-column bg-dark text-white vh-100 pt-5">
       <ul className="nav nav-pills flex-column p-3">
-        <li
-          className={active === 1 ? "active nav-item" : "nav-item"}
-          onClick={() => setactive(1)}
-        >
-          <Link to="/">
+        <Link to="/admin">
+          <li
+            className={active === 1 ? "active nav-item" : "nav-item"}
+            onClick={() => setactive(1)}
+          >
             <span className="me-3">
               <BiSolidDashboard />
             </span>
             <span>
               <strong>Dashborad</strong>
             </span>
-          </Link>
-        </li>
-        <li
-          className={active === 2 ? "active nav-item" : "nav-item"}
-          onClick={() => setactive(2)}
-        >
-          <Link to="/childrenList">
+          </li>
+        </Link>
+        <Link to="/admin/childrenList">
+          <li
+            className={active === 2 ? "active nav-item" : "nav-item"}
+            onClick={() => setactive(2)}
+          >
             <span className="me-3">
               <MdChildCare />
             </span>
             <span>
               <strong>Children List</strong>
             </span>
-          </Link>
-        </li>
-        <li
-          className={active === 3 ? "active nav-item" : "nav-item"}
-          onClick={() => setactive(3)}
-        >
-          <Link to="/donatorsList">
+          </li>
+        </Link>
+        <Link to="/admin/donatorsList">
+          <li
+            className={active === 3 ? "active nav-item" : "nav-item"}
+            onClick={() => setactive(3)}
+          >
             <span className="me-3">
               <FcDonate />
             </span>
             <span>
               <strong>Donations</strong>
             </span>
-          </Link>
-        </li>
-        <li
-          className={active === 4 ? "active nav-item" : "nav-item"}
-          onClick={() => setactive(4)}
-        >
-          <Link to="/paymentDetails">
+          </li>
+        </Link>
+        <Link to="/admin/paymentDetails">
+          <li
+            className={active === 4 ? "active nav-item" : "nav-item"}
+            onClick={() => setactive(4)}
+          >
             <span className="me-3">
               <MdOutlinePayment />
             </span>
             <span>
               <strong>Payment</strong>
             </span>
-          </Link>
-        </li>
-        <li
-          className={active === 5 ? "active nav-item" : "nav-item"}
-          onClick={() => setactive(5)}
-        >
-          <Link to="/">
+          </li>
+        </Link>
+        <Link to="/">
+          <li
+            className={active === 5 ? "active nav-item" : "nav-item"}
+            onClick={() => setactive(5)}
+          >
             <span className="me-3">
               <FiLogOut />
             </span>
             <span>
               <strong>Logout</strong>
             </span>
-          </Link>
-        </li>
+          </li>
+        </Link>
       </ul>
     </div>
   );

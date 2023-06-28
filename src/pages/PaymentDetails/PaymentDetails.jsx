@@ -4,7 +4,7 @@ import PaymentTable from "./PaymentTable";
 const PaymentDetails = () => {
   return (
     <div className="container d-flex flex-column">
-      <span className="text-danger fw-bold">Donators List</span>
+      <span className="text-danger fw-bold">Payments List</span>
       <PaymentTable />
     </div>
   );

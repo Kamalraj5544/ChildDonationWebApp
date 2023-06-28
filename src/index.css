@@ -12,4 +12,8 @@ code {
     monospace;
 }
 
+.bg-red {
+  background-color: rgb(245, 69, 69) !important;
+}
+
 

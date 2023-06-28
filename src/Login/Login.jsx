@@ -32,8 +32,8 @@ const Login = () => {
     <div className="wrapper">
       <div className="login-bg"></div>
       <div className="vw-100 vh-100 d-flex flex-column justify-content-center align-items-center bg-text">
-        <section className=" d-flex flex-column justify-content-center align-items-center p-5 border rounded form-section-login">
-          <p className="fw-bold fs-3 pb-2 login-heading pe-1">
+        <section className=" d-flex flex-column justify-content-center align-items-center p-5 form-section-login">
+          <p className="fw-bold fs-3 pb-2 login-heading pe-1 text-danger">
             Hey Admin
             <span>
               {" "}
@@ -78,7 +78,7 @@ const Login = () => {
               Forget password?
             </Link>
           </div>
-          <button type="button" class="btn btn-light fw-bold">
+          <button type="button" class="btn btn-danger fw-bold">
             Sign In <PiSignInBold />
           </button>
         </section>

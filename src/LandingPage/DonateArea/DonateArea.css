@@ -1,5 +1,5 @@
 .donateArea-conatiner {
-  height: 100vh;
+  height: 80vh;
   position: relative;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .donateArea-text{
-    margin-top: 20rem;
+    margin-top: 7rem;
 }
 
 

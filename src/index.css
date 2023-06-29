@@ -18,6 +18,15 @@ a {
   text-decoration: none !important;
 }
 
+li{
+  list-style: none;
+  
+}
+
+ul {
+  padding-left: 0;
+}
+
 .bg-red {
   background-color: rgb(245, 69, 69) !important;
 }

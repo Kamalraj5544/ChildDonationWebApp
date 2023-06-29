@@ -7,6 +7,7 @@ import PartnerLogos from "../../components/PartnerLogos/PartnerLogos";
 import Description from "../Description/Description";
 import DonatorSlider from "../DonatorSlider/DonatorSlider";
 import DonateArea from "../DonateArea/DonateArea";
+import Footer from "../../components/Footer/Footer";
 
 const MainHome = () => {
   return (
@@ -17,15 +18,15 @@ const MainHome = () => {
       <div className="bg-home"></div>
       <section className="home-container ps-3 d-flex flex-column justify-content-center align-items-center">
         <div className="row">
-          <div className="col-8 d-flex flex-column justify-content-center align-items-center">
-            <section>
+          <div className="col-8 d-flex flex-column justify-content-center align-items-center mt-5">
+            <section className="mt-5">
               <p className="fw-bold display-5">
                 Give Food And Medical Care To Abandoned Elderly Parents
               </p>
               <p className="fs-5 fw-normal pb-4">
                 Help Carmel Save Her From Malnutrition And Illness
               </p>
-              <button className="btn bg-red text-white fs-5 fw-bold">
+              <button className="btn bg-danger text-white fs-5 fw-bold">
                 Donate Now
               </button>
             </section>
@@ -70,6 +71,10 @@ const MainHome = () => {
 
       <section className="my-5">
         <DonateArea />
+      </section>
+
+      <section>
+        <Footer />
       </section>
     </div>
   );

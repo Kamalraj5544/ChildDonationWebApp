@@ -1,0 +1,29 @@
+.donateArea-conatiner {
+  height: 100vh;
+  position: relative;
+}
+
+
+.bg-donateArea {
+  background-image: url("../../assets/happy-volunteers-putting-their-hands-together\ 1.jpg");
+
+  /* Full height */
+  height: 80vh;
+  width: 100%;
+
+  filter: brightness(40%);
+
+  /* Center and scale the image nicely */
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  z-index: -1;
+}
+
+.donateArea-text{
+    margin-top: 20rem;
+}
+
+
+

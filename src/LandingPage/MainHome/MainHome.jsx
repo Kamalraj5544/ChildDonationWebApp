@@ -6,6 +6,7 @@ import MainNavbar from "../../components/MainNavbar/MainNavbar";
 import PartnerLogos from "../../components/PartnerLogos/PartnerLogos";
 import Description from "../Description/Description";
 import DonatorSlider from "../DonatorSlider/DonatorSlider";
+import DonateArea from "../DonateArea/DonateArea";
 
 const MainHome = () => {
   return (
@@ -65,6 +66,10 @@ const MainHome = () => {
 
       <section className="my-5 px-3">
         <DonatorSlider />
+      </section>
+
+      <section className="my-5">
+        <DonateArea />
       </section>
     </div>
   );

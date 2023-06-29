@@ -1,7 +1,4 @@
-a {
-    text-decoration: none !important;
-    color: white !important;
-}
+
 
 .nav-item {
     margin-top: 0.5rem;
@@ -12,6 +9,8 @@ a {
 .nav-item:hover{
     background-color: rgb(245, 69, 69);
     cursor: pointer;
+    letter-spacing: .05rem;
+    font-weight: 700;
 }
 
 

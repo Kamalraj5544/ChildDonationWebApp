@@ -1,0 +1,24 @@
+.home-wrapper{
+   position: relative;
+}
+
+.bg-home{
+    background-color: rgba(234, 230, 223, 0.858) !important;
+    height: 100vh;
+    position: absolute; 
+    content: "";
+    top: 0;
+    left: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.home-container{
+    height: 70vh;
+    width: 100vw;
+}
+
+.des-wrapper{
+    margin-bottom: 13rem;
+}

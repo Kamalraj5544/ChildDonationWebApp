@@ -14,11 +14,8 @@ const AboutUsHome = () => {
       <header>
         <MainNavbar />
       </header>
-      <section className="about-container d-flex align-items-center">
-        <div className="bg-about"></div>
-        <div className="about fw-bolder container ">About Us</div>
-      </section>
-      {/* <BackgroundSection image={aboutBg} contentName="About Us" /> */}
+
+      <BackgroundSection image={aboutBg} contentName="About Us" />
 
       <section className="container row my-5">
       <div className="col-6">

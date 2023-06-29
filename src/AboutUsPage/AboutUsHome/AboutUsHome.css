@@ -1,0 +1,48 @@
+.about-container {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
+
+.bg-about {
+  background-image: url("../../assets/voluteer-group-people-charity-donation-park\ 1.jpg");
+  position: absolute;
+  z-index: -1;
+  height: 70vh;
+  width: 100%;
+  filter: brightness(40%);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.volunteer-image{
+    background-image: url("../../assets/volunteers-work-preparing-donations-charity\ 1.jpg");
+    width: 100%;
+    height: 100%;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.bg-black-rotated{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: black;
+
+    z-index: -1;
+    transform: rotate(10deg);
+
+}
+
+.footer-section{
+    margin-top: 7rem;
+}
+
+.about{
+    color: white;
+    font-size: 6rem;
+}

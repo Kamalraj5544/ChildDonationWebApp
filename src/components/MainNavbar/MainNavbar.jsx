@@ -30,7 +30,7 @@ const MainNavbar = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="/about">
+                <a className="nav-link text-white" href="/aboutUs">
                   About Us
                 </a>
               </li>

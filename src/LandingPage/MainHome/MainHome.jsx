@@ -9,6 +9,8 @@ import DonatorSlider from "../DonatorSlider/DonatorSlider";
 import DonateArea from "../DonateArea/DonateArea";
 import Footer from "../../components/Footer/Footer";
 
+import groupPhoto from "../../assets/group-children-lying-reading-grass-field 1.jpg";
+
 const MainHome = () => {
   return (
     <div className="home-wrapper">
@@ -16,22 +18,24 @@ const MainHome = () => {
         <MainNavbar />
       </header>
       <div className="bg-home"></div>
-      <section className="home-container ps-3 d-flex flex-column justify-content-center align-items-center">
+      <section className="home-container">
         <div className="row">
-          <div className="col-8 d-flex flex-column justify-content-center align-items-center mt-5">
-            <section className="mt-5">
-              <p className="fw-bold display-5">
-                Give Food And Medical Care To Abandoned Elderly Parents
-              </p>
-              <p className="fs-5 fw-normal pb-4">
-                Help Carmel Save Her From Malnutrition And Illness
-              </p>
-              <button className="btn bg-danger text-white fs-5 fw-bold">
-                Donate Now
-              </button>
+          <div className="col-8 d-flex flex-column align-items-center justify-content-center ps-5">
+            <section >
+            <p className="fw-bold display-5">
+              Give Food And Medical Care To Abandoned Elderly Parents
+            </p>
+            <p className="fs-5 fw-normal pb-4">
+              Help Carmel Save Her From Malnutrition And Illness
+            </p>
+            <button className="btn bg-danger text-white fs-5 fw-bold">
+              Donate Now
+            </button>
             </section>
           </div>
-          <div className="col-4"></div>
+          <div className="col-4 maskImage mt-5">
+            <img src={groupPhoto} alt="childPhoto" width="100%" height="100%" />
+          </div>
         </div>
       </section>
 
@@ -61,6 +65,7 @@ const MainHome = () => {
           </div>
         </div>
       </div>
+
       <section className="des-wrapper">
         <Description />
       </section>

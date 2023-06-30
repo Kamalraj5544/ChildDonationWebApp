@@ -1,6 +1,7 @@
 import React from "react";
 
 import cCardImage from "../../assets/medium-shot-happy-kids-posing 1.jpg";
+import { Link } from "react-router-dom";
 
 const ChildCard = () => {
   return (
@@ -18,7 +19,7 @@ const ChildCard = () => {
         </p>
       </div>
       <div className="card-body">
-        <button className="btn btn-danger fw-bolder">Donate Now</button>
+        <Link to="/donateInfo" className="btn btn-danger fw-bolder">Donate Now</Link>
         <button className="btn border text-primary ms-3 bg-white">
           <i class="bi bi-share"></i>
         </button>

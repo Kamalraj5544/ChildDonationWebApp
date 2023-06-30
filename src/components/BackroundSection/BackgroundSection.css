@@ -9,14 +9,14 @@
   z-index: -1;
   height: 70vh;
   width: 100%;
-  filter: brightness(40%);
+  filter: brightness(70%);
 
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
 .content {
   color: white;
-  font-size: 6rem;
+  font-size: 4rem;
 }

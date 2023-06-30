@@ -38,7 +38,7 @@ const MainNavbar = () => {
                 <a className="nav-link text-white" href="/services">Services</a>
               </li>
               <li className="nav-item ">
-                <a className="nav-link text-white" href="/contact">Contact Us</a>
+                <a className="nav-link text-white" href="/contactUs">Contact Us</a>
               </li>
             </ul>
             <Link to="/login"

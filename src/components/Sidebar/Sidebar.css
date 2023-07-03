@@ -7,7 +7,7 @@
     border-radius: 8px;
 }
 
-.nav-item:hover{
+.item:hover{
     
     background-color: rgb(245, 69, 69);
     cursor: pointer !important;
@@ -16,6 +16,6 @@
 }
 
 
-.active {
+.activetab {
     background-color: rgb(245, 69, 69);
 }

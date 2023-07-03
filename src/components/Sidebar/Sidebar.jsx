@@ -20,7 +20,7 @@ const Sidebar = () => {
       <ul className="nav nav-pills flex-column p-3">
         <Link to="/admin/dashboard">
           <li
-            className={active === 1 ? "active nav-item" : "nav-item"}
+            className={active === 1 ? "activetab nav-item item" : "nav-item"}
             onClick={() => setactive(1)}
           >
             <span className="me-3">
@@ -33,7 +33,7 @@ const Sidebar = () => {
         </Link>
         <Link to="/admin/childrenList">
           <li
-            className={active === 2 ? "active nav-item" : "nav-item"}
+            className={active === 2 ? "activetab nav-item item" : "nav-item"}
             onClick={() => setactive(2)}
           >
             <span className="me-3">
@@ -46,7 +46,7 @@ const Sidebar = () => {
         </Link>
         <Link to="/admin/donatorsList">
           <li
-            className={active === 3 ? "active nav-item" : "nav-item"}
+            className={active === 3 ? "activetab nav-item item" : "nav-item"}
             onClick={() => setactive(3)}
           >
             <span className="me-3">
@@ -59,7 +59,7 @@ const Sidebar = () => {
         </Link>
         <Link to="/admin/paymentDetails">
           <li
-            className={active === 4 ? "active nav-item" : "nav-item"}
+            className={active === 4 ? "activetab nav-item item" : "nav-item"}
             onClick={() => setactive(4)}
           >
             <span className="me-3">
@@ -72,7 +72,7 @@ const Sidebar = () => {
         </Link>
         <Link to="/">
           <li
-            className={active === 5 ? "active nav-item" : "nav-item"}
+            className={active === 5 ? "activetab nav-item item" : "nav-item"}
             onClick={() => setactive(5)}
           >
             <span className="me-3">

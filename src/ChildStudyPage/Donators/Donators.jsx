@@ -1,14 +1,10 @@
 import React from "react";
 
-import MainNavbar from "../../components/MainNavbar/MainNavbar";
-import BackgroundSection from "../../components/BackroundSection/BackgroundSection";
-import Footer from "../../components/Footer/Footer";
 import DonatorCard from "../../components/DonatorCard/DonatorCard";
 
-import cStudyBg3 from "../../assets/volunteers-holding-box-containing-donations-charity 1 (1).jpg";
 import backStoryImage2 from "../../assets/pexels-rdne-stock-project-6647119 1.jpg";
 
-const OurDonatorsHome = () => {
+const Donators = () => {
   const donatorsListArray = [
     <DonatorCard />,
     <DonatorCard />,
@@ -17,21 +13,8 @@ const OurDonatorsHome = () => {
     <DonatorCard />,
   ];
   return (
-    <div>
-      <header>
-        <MainNavbar />
-      </header>
-
-      <BackgroundSection image={cStudyBg3} contentName="Child Study" />
-
-      <br />
-      <br />
-
+    <div className="mt-5">
       <section className="container">
-        <h2 className="fw-bolder fs-2 text-center text-danger my-5">
-          People who love changes
-        </h2>
-
         <div className="row row-col-2 row-col-md-3 g-2 mb-5">
           {donatorsListArray.map((ele) => (
             <div className="col">{ele}</div>
@@ -84,12 +67,8 @@ const OurDonatorsHome = () => {
           </div>
         </div>
       </section>
-
-      <section className="footer-section">
-        <Footer />
-      </section>
     </div>
   );
 };
 
-export default OurDonatorsHome;
+export default Donators;

@@ -1,23 +1,18 @@
 import React from "react";
 
-import cStudyBg from "../../assets/children-syria-earthquake-2023 1.jpg";
+import "./ChildStudyHome.css"
 
-import backStroryChild from "../../assets/pexels-abhay-pratap-14108494 1.jpg";
+import cStudyBg from "../../assets/children-syria-earthquake-2023 1.jpg";
 
 import MainNavbar from "../../components/MainNavbar/MainNavbar";
 import BackgroundSection from "../../components/BackroundSection/BackgroundSection";
-import ChildCard from "../../components/ChildCard/ChildCard";
 import Footer from "../../components/Footer/Footer";
+import Needers from "../Needers/Needers";
+import Donators from "../Donators/Donators";
 
 const ChildStudyHome = () => {
-  const childCardArray = [
-    <ChildCard />,
-    <ChildCard />,
-    <ChildCard />,
-    <ChildCard />,
-    <ChildCard />,
-    <ChildCard />,
-  ];
+
+
   return (
     <div className="childStudy-wrapper">
       <header>
@@ -30,51 +25,60 @@ const ChildStudyHome = () => {
         <h2 className="fw-bolder fs-2 text-center text-danger my-5">
           Loves Grows by Giving
         </h2>
-
-        <div className="row row-cols-3  g-5 container">
-          {childCardArray.map((ele) => (
-            <div className="col">{ele}</div>
-          ))}
-        </div>
       </section>
 
-      <section>
-        <h2 className="fw-bolder fs-2 text-center text-danger my-5">
-          Our Back Story
-        </h2>
-
-        <div className="row">
-          <div className="col-6">
-            <img
-              src={backStroryChild}
-              alt="childImage"
-              className="w-100 h-100 "
-            />
-          </div>
-          <div className="col-6 d-flex justify-content-center flex-column">
-            <h4 className="fw-bold my-5">Heart Broken Story</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus
-              accumsan tristique nibh orci pharetra elit felis. Imperdiet in
-              ipsum massa aenean. Lorem ipsum dolor sit amet consectetur.
-              Ullamcorper phasellus accumsan tristique Lorem ipsum dolor sit
-              amet consectetur. Ullamcorper phasellus accumsan tristique nibh
-              orci pharetra elit felis. Imperdiet in ipsum massa aenean. Lorem
-              ipsum dolor sit amet consectetur. Ullamcorper phasellus accumsan
-              tristique Lorem ipsum dolor sit amet consectetur. Ullamcorper
-              phasellus accumsan tristique nibh orci pharetra elit felis.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus
-              accumsan tristique nibh orci pharetra elit felis. Imperdiet in
-              ipsum massa aenean. Lorem ipsum dolor sit amet consectetur.
-              Ullamcorper phasellus accumsan tristique Lorem ipsum dolor sit
-              amet consectetur.
-            </p>
-          </div>
+      <ul className="nav nav-pills mb-3 d-flex align-items-center justify-content-center " id="pills-tab" role="tablist">
+        <div className="d-flex flex-row bg-body-secondary rounded">
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link active text-black"
+              id="pills-home-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-home"
+              type="button"
+              role="tab"
+              aria-controls="pills-home"
+              aria-selected="true"
+            >
+              Love Who Need
+            </button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link text-black"
+              id="pills-profile-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-profile"
+              type="button"
+              role="tab"
+              aria-controls="pills-profile"
+              aria-selected="false"
+            >
+              Love Who Donates
+            </button>
+          </li>
         </div>
-      </section>
+      </ul>
+      <div className="tab-content" id="pills-tabContent">
+        <div
+          className="tab-pane fade show active"
+          id="pills-home"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
+          tabindex="0"
+        >
+          <Needers />
+        </div>
+        <div
+          className="tab-pane fade"
+          id="pills-profile"
+          role="tabpanel"
+          aria-labelledby="pills-profile-tab"
+          tabindex="0"
+        >
+          <Donators />
+        </div>
+      </div>
 
       <section className="footer-section">
         <Footer />

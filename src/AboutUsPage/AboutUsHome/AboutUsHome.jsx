@@ -2,10 +2,10 @@ import React from "react";
 
 import "./AboutUsHome.css";
 
-import aboutBg from "../../assets/voluteer-group-people-charity-donation-park 1.jpg"
+import aboutBg from "../../assets/voluteer-group-people-charity-donation-park 1.jpg";
 
 import MainNavbar from "../../components/MainNavbar/MainNavbar";
-import Footer from "../../components/Footer/Footer"
+import Footer from "../../components/Footer/Footer";
 import BackgroundSection from "../../components/BackroundSection/BackgroundSection";
 
 const AboutUsHome = () => {
@@ -18,16 +18,30 @@ const AboutUsHome = () => {
       <BackgroundSection image={aboutBg} contentName="About Us" />
 
       <section className="container row my-5">
-      <div className="col-6">
-        <div className="volunteer-image d-flex justify-content-center align-items-center">
+        <div className="col-6">
+          <div className="volunteer-image d-flex justify-content-center align-items-center">
             <div className="bg-black-rotated "></div>
+          </div>
         </div>
-      </div>
-      <div className="col-6">
-        <h2 className="text-danger display-5 fw-bolder mb-5">About Us</h2>
-        <p>Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus accumsan tristique nibh orci pharetra elit felis. Imperdiet in ipsum massa aenean. Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus accumsan tristique Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus accumsan tristique nibh orci pharetra elit felis. Imperdiet in ipsum massa aenean. Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus accumsan tristique Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus accumsan tristique nibh orci pharetra elit felis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus accumsan tristique nibh orci pharetra elit felis. Imperdiet in ipsum massa aenean. Lorem ipsum dolor sit amet consectetur. </p>
-      </div>
+        <div className="col-6">
+          <h2 className="text-danger display-5 fw-bolder mb-5">About Us</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus
+            accumsan tristique nibh orci pharetra elit felis. Imperdiet in ipsum
+            massa aenean. Lorem ipsum dolor sit amet consectetur. Ullamcorper
+            phasellus accumsan tristique Lorem ipsum dolor sit amet consectetur.
+            Ullamcorper phasellus accumsan tristique nibh orci pharetra elit
+            felis. Imperdiet in ipsum massa aenean. Lorem ipsum dolor sit amet
+            consectetur. Ullamcorper phasellus accumsan tristique Lorem ipsum
+            dolor sit amet consectetur. Ullamcorper phasellus accumsan tristique
+            nibh orci pharetra elit felis.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus
+            accumsan tristique nibh orci pharetra elit felis. Imperdiet in ipsum
+            massa aenean. Lorem ipsum dolor sit amet consectetur.{" "}
+          </p>
+        </div>
       </section>
 
       <section className="footer-section">

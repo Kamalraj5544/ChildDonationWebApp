@@ -22,13 +22,13 @@ const MainHome = () => {
         <div className="row">
           <div className="col-8 d-flex flex-column align-items-center justify-content-center ps-5">
             <section >
-            <p className="fw-bold display-5">
+            <p className="fw-bolder display-3">
               Give Food And Medical Care To Abandoned Elderly Parents
             </p>
             <p className="fs-5 fw-normal pb-4">
               Help Carmel Save Her From Malnutrition And Illness
             </p>
-            <button className="btn bg-danger text-white fs-5 fw-bold">
+            <button className="btn btn-danger text-white fs-5 fw-bold">
               Donate Now
             </button>
             </section>

@@ -78,9 +78,9 @@ const Login = () => {
               Forget password?
             </Link>
           </div>
-          <button type="button" class="btn btn-danger fw-bold">
+          <Link to="/admin/dashboard" type="button" class="btn btn-danger fw-bold">
             Sign In <PiSignInBold />
-          </button>
+          </Link>
         </section>
       </div>
     </div>

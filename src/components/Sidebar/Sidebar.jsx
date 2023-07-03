@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <div className="d-flex justify-content-between flex-column bg-dark text-white vh-100 pt-5">
       <ul className="nav nav-pills flex-column p-3">
-        <Link to="/admin">
+        <Link to="/admin/dashboard">
           <li
             className={active === 1 ? "active nav-item" : "nav-item"}
             onClick={() => setactive(1)}

@@ -14,7 +14,7 @@ const MainRouting = () => {
   return (
     <Routes>
         <Route path='/' element={<MainHome />} />
-        <Route path='/admin' element={<AdminPage />} />
+        <Route path='/admin/:id' element={<AdminPage />} />
         <Route path='/aboutUs' element={<AboutUsHome />} />
         <Route path='/services' element={<ChildStudyHome /> } />
         <Route path='/contactUs' element={<ContactUsHome /> } />

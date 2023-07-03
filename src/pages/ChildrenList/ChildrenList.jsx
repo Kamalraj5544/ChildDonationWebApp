@@ -13,7 +13,7 @@ const ChildrenList = () => {
     <div className="container d-flex flex-column">
       <div className="d-flex justify-content-between align-items-center">
         <span className="text-danger fw-bold">Children List</span>
-        <Link className="border text-black" to="/childrenList/add">
+        <Link className="border text-black" to="/admin/childrenListAdd">
           <Button
             variant="Outline"
             startIcon={<Icon sx={{ color: red[500] }}>add_circle </Icon>}

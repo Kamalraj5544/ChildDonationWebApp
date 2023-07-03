@@ -13,7 +13,7 @@ const DonatorsList = () => {
     <div className="container d-flex flex-column">
       <div className="d-flex justify-content-between align-items-center">
         <span className="text-danger fw-bold">Donators List</span>
-        <Link className="border text-black" to="/donatorsList/add">
+        <Link className="border text-black" to="/admin/donatorsListAdd">
           <Button
             variant="Outline"
             startIcon={<Icon sx={{ color: red[500] }}>add_circle </Icon>}

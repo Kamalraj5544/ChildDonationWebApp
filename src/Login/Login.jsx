@@ -40,9 +40,9 @@ const Login = () => {
               <MdAdminPanelSettings />
             </span>
           </p>
-          <div className="px-3 py-2 mb-4 border rounded">
+          <div className="px-3 py-2 mb-4 border rounded w-100">
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-              <AccountCircle sx={{ color: "white", mr: 1, my: 0.5 }} />
+              <AccountCircle sx={{ color: "red", mr: 1, my: 0.5 }} />
               <TextField
                 id="input-with-sx"
                 label="Username"
@@ -64,7 +64,7 @@ const Login = () => {
                       aria-label="toggle password visibility"
                       onClick={handleClickShowPassword}
                       onMouseDown={handleMouseDownPassword}
-                      style={{ color: "white" }}
+                      style={{ color: "red" }}
                     >
                       {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>

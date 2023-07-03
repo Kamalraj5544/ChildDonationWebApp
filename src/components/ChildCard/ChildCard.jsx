@@ -20,9 +20,9 @@ const ChildCard = () => {
       </div>
       <div className="card-body">
         <Link to="/donateInfo" className="btn btn-danger fw-bolder">Donate Now</Link>
-        <button className="btn border text-primary ms-3 bg-white">
+        <Link to="/ourDonators" className="btn border text-primary ms-3 bg-white">
           <i class="bi bi-share"></i>
-        </button>
+        </Link>
       </div>
     </div>
   );

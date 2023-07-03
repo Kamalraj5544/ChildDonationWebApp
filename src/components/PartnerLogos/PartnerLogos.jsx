@@ -2,7 +2,7 @@ import React from "react";
 
 const PartnerLogos = () => {
   return (
-      <div className="row d-flex justify-content-center align-items-center">
+      <div className="row m-0 d-flex justify-content-center align-items-center">
         <div className="col p-3">
           <svg
             width="131"

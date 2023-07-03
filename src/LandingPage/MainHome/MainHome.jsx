@@ -13,34 +13,36 @@ import groupPhoto from "../../assets/group-children-lying-reading-grass-field 1.
 
 const MainHome = () => {
   return (
-    <div className="home-wrapper">
+    <>
       <header>
         <MainNavbar />
       </header>
       <div className="bg-home"></div>
       <section className="home-container">
         <div className="row">
-          <div className="col-8 d-flex flex-column align-items-center justify-content-center ps-5">
-            <section >
-            <p className="fw-bolder display-3">
-              Give Food And Medical Care To Abandoned Elderly Parents
-            </p>
-            <p className="fs-5 fw-normal pb-4">
-              Help Carmel Save Her From Malnutrition And Illness
-            </p>
-            <button className="btn btn-danger text-white fs-5 fw-bold">
-              Donate Now
-            </button>
+          <div className="col-sm-8 p-4">
+            <section className="home-text w-100 h-100 d-flex flex-column align-items-center justify-content-center ">
+              <div>
+              <p className="fw-bolder display-3">
+                Give Food And Medical Care To Abandoned Elderly Parents
+              </p>
+              <p className="fs-5 fw-normal pb-4">
+                Help Carmel Save Her From Malnutrition And Illness
+              </p>
+              <button className="btn btn-danger text-white fs-5 fw-bold">
+                Donate Now
+              </button>
+              </div>
             </section>
           </div>
-          <div className="col-4 maskImage mt-5">
-            <img src={groupPhoto} alt="childPhoto" width="100%" height="100%" />
+          <div className="col-sm-4 maskImage">
+            <img src={groupPhoto} alt="childPhoto" className="w-100" />
           </div>
         </div>
       </section>
 
-      <div className="partner-box row p-5">
-        <div className="col-4">
+      <div className="partner-box row m-0">
+        <section className="col-md-4">
           <div className="card text-bg-dark mb-3 p-3">
             <div className="card-header fs-2 fw-bold">Partners</div>
             <div className="card-body">
@@ -57,13 +59,13 @@ const MainHome = () => {
               </a>
             </div>
           </div>
-        </div>
-        <div className="col-8">
+        </section>
+        <section className="col-md-8">
           <div className="row w-100 h-50"></div>
           <div className="row">
             <PartnerLogos />
           </div>
-        </div>
+        </section>
       </div>
 
       <section className="des-wrapper">
@@ -81,7 +83,7 @@ const MainHome = () => {
       <section>
         <Footer />
       </section>
-    </div>
+    </>
   );
 };
 

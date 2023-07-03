@@ -10,8 +10,8 @@ import DonatorCard from "../../components/DonatorCard/DonatorCard";
 const DonatorSlider = () => {
   const donatorsArray = [<DonatorCard />, <DonatorCard />, <DonatorCard />];
   return (
-    <div className="row mx-5 container-fluid">
-      <div className="col-4">
+    <div className="row mx-5 ">
+      <div className="col-md-4">
         <section>
           <h3 className="fs-2 fw-bolder text-danger mb-4">Our Donators</h3>
           <p>
@@ -31,10 +31,8 @@ const DonatorSlider = () => {
           </div>
         </section>
       </div>
-      <div className="col-8">
-        <div className="d-flex flex-row ">
+      <div className="col-md-8 d-flex flex-row">
         {donatorsArray.map((element) => element)}
-        </div>
       </div>
     </div>
   );

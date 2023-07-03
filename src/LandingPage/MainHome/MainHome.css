@@ -2,25 +2,10 @@
   position: relative;
 }
 
-.bg-home {
-  background-color: rgba(234, 230, 223, 0.858) !important;
-  height: 100vh;
-  position: absolute;
-  content: "";
-  top: 5rem;
-  left: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-}
-
 .home-container {
   height: 100vh;
   width: 100vw;
-}
-
-.des-wrapper {
-  margin-bottom: 13rem;
+  background-color: rgba(234, 230, 223, 0.858) !important;
 }
 
 .maskImage {
@@ -33,6 +18,31 @@
 }
 
 .partner-box {
-    position: relative;
-    top: -8rem;
+  position: relative;
+  top: -8rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.des-wrapper {
+  margin-bottom: 13rem;
+}
+
+@media screen and (max-width: 576px) {
+  .maskImage {
+    display: none;
+  }
+
+  .home-text {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .partner-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }

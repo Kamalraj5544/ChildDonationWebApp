@@ -8,8 +8,7 @@ import clegal from "../../assets/kids-workers-helping-make-traditional-bricks-by
 
 const Description = () => {
   return (
-    <div className="des-container bg-des ">
-      {/* <div className="bg-des"></div> */}
+    <div className="des-container bg-des">
       <section className="container d-flex flex-column justify-content-start align-items-center pb-5">
         <h3 className="text-danger fw-bolder fs-1 pt-5 p-4">
           Featured Fundraisers
@@ -22,8 +21,8 @@ const Description = () => {
         </p>
       </section>
 
-      <section className="container position-relative">
-        <div className="row row-cols-1 row-cols-md-3 g-4">
+      <section className="position-relative">
+        <div className="row row-cols-md-3">
           <div className="col d-flex justify-content-center align-items-center">
             <div className="card text-bg-dark w-75">
               <img src={cHealth} className="card-img" alt="..." />

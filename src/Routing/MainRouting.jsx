@@ -10,7 +10,6 @@ import ChildStudyHome from '../ChildStudyPage/ChildStudyHome/ChildStudyHome'
 import ContactUsHome from '../ContactUsPage/ContactUsHome/ContactUsHome'
 
 
-
 const MainRouting = () => {
   return (
     <Routes>

@@ -1,23 +1,19 @@
 import React from "react";
 
-import MainNavbar from "../../components/MainNavbar/MainNavbar";
+import "./DonateChildHome.css";
 
+import MainNavbar from "../../components/MainNavbar/MainNavbar";
 import BackroundSection from "../../components/BackroundSection/BackgroundSection";
+import ChildCard from "../../components/ChildCard/ChildCard";
+import DonateFormSection from "../DonateFormSection/DonateFormSection";
+import Footer from "../../components/Footer/Footer";
 
 import cStudyBg2 from "../../assets/boy-lay-flat-laying-his-hands-belly-forehead-dry-soil 1.jpg";
 import cCardImage from "../../assets/medium-shot-happy-kids-posing 1.jpg";
-
-import DonateFormSection from "../DonateFormSection/DonateFormSection";
-import Footer from "../../components/Footer/Footer";
-import ChildCard from "../../components/ChildCard/ChildCard";
-
 const DonateChildHome = () => {
   return (
-    <div>
-      <header>
-        <MainNavbar />
-      </header>
-
+    <div className="donateChild-wrapper">
+      <MainNavbar />
       <BackroundSection image={cStudyBg2} contentName="Child Study" />
 
       <section className="container pb-5">

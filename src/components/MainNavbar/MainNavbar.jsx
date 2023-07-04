@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 
 const MainNavbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-red">
+    <header className="header-section">
+      <nav className="navbar navbar-expand-lg bg-red">
       <div className="container-fluid bg-red">
         <button
           className="navbar-toggler"
@@ -52,6 +53,7 @@ const MainNavbar = () => {
         </div>
       </div>
     </nav>
+    </header>
   );
 };
 

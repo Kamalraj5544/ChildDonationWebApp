@@ -1,13 +1,16 @@
 import React from "react";
+
+import "./ContactUSHome.css"
+
 import MainNavbar from "../../components/MainNavbar/MainNavbar";
 import BackgroundSection from "../../components/BackroundSection/BackgroundSection";
+import Footer from "../../components/Footer/Footer";
 
 import contactUsBg from "../../assets/people-stacking-hands-together-park 1.jpg";
-import Footer from "../../components/Footer/Footer";
 
 const ContactUsHome = () => {
   return (
-    <div>
+    <div className="contactUs-wrapper">
       <header>
         <MainNavbar />
       </header>

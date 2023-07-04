@@ -14,9 +14,7 @@ import groupPhoto from "../../assets/group-children-lying-reading-grass-field 1.
 const MainHome = () => {
   return (
     <>
-      <header>
-        <MainNavbar />
-      </header>
+      <MainNavbar />
       <div className="bg-home"></div>
       <section className="home-container">
         <div className="row p-0 m-0">

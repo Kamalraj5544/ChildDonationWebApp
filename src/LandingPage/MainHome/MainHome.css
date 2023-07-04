@@ -23,8 +23,7 @@
 }
 
 .des-wrapper {
-  margin-bottom: 13rem;
-  padding-bottom:5rem;
+  margin-bottom: 10rem;
 }
 
 @media screen and (max-width: 576px) {
@@ -34,6 +33,11 @@
 
   .home-text {
     font-size: 1.5rem;
+  }
+
+  .des-cards {
+    display: flex;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 768px) {

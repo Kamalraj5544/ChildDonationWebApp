@@ -8,7 +8,8 @@ import clegal from "../../assets/kids-workers-helping-make-traditional-bricks-by
 
 const Description = () => {
   return (
-    <div className="des-container bg-des">
+    <div className="des-container">
+    <div className="bg-des"></div>
       <section className="container d-flex flex-column justify-content-start align-items-center pb-5">
         <h3 className="text-danger fw-bolder fs-1 pt-5 p-4">
           Featured Fundraisers
@@ -21,10 +22,10 @@ const Description = () => {
         </p>
       </section>
 
-      <section className="position-relative">
-        <div className="row row-cols-md-3">
-          <div className="col d-flex justify-content-center align-items-center">
-            <div className="card text-bg-dark w-75">
+      <section className="container">
+        <div className="row row-col-md-1 g-4">
+          <div className="col-sm">
+            <div className="card text-bg-dark w-100">
               <img src={cHealth} className="card-img" alt="..." />
               <div className="card-img-overlay d-flex justify-content-center align-items-end">
                 <p className="fw-bolder fs-4">
@@ -33,8 +34,8 @@ const Description = () => {
               </div>
             </div>
           </div>
-          <div className="col d-flex justify-content-center align-items-center">
-            <div className="card text-bg-dark w-75 border-0">
+          <div className="col-sm">
+            <div className="card text-bg-dark w-100 border-0">
               <img src={cStudy} className="card-img" alt="..." />
               <div className="card-img-overlay d-flex justify-content-center align-items-end ">
                 <p className="fw-bolder fs-4">
@@ -43,8 +44,8 @@ const Description = () => {
               </div>
             </div>
           </div>
-          <div className="col d-flex justify-content-center align-items-center">
-            <div className="card text-bg-dark w-75">
+          <div className="col-sm">
+            <div className="card text-bg-dark w-100">
               <img src={clegal} className="card-img" alt="..." />
               <div className="card-img-overlay d-flex justify-content-center align-items-end">
                 <p className="fw-bolder fs-4">

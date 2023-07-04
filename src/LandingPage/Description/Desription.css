@@ -1,5 +1,15 @@
+.des-container{
+    position: relative;
+}
+
 .bg-des{
+    position: absolute;
     background-color: black;
     width: 100vw;
     height:60vh;
+    z-index: -1;
+}
+
+.des-cards {
+    position: relative;
 }

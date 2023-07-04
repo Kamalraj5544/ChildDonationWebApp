@@ -19,8 +19,8 @@ const MainHome = () => {
       </header>
       <div className="bg-home"></div>
       <section className="home-container">
-        <div className="row">
-          <div className="col-sm-8 p-4">
+        <div className="row p-0 m-0">
+          <div className="col-sm-8">
             <section className="home-text w-100 h-100 d-flex flex-column align-items-center justify-content-center ">
               <div>
               <p className="fw-bolder display-3">
@@ -35,7 +35,7 @@ const MainHome = () => {
               </div>
             </section>
           </div>
-          <div className="col-sm-4 maskImage">
+          <div className="col-sm-4 maskImage p-0">
             <img src={groupPhoto} alt="childPhoto" className="w-100" />
           </div>
         </div>
@@ -76,11 +76,11 @@ const MainHome = () => {
         <DonatorSlider />
       </section>
 
-      <section className="my-5">
+      <section className="">
         <DonateArea />
       </section>
 
-      <section>
+      <section className="footer-section">
         <Footer />
       </section>
     </>

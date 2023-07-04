@@ -1,29 +1,33 @@
-.donateArea-conatiner {
-  height: 80vh;
+.donateArea-container {
   position: relative;
+  margin-top: 9rem;
+  margin-bottom: 9rem;
 }
 
 
 .bg-donateArea {
   background-image: url("../../assets/happy-volunteers-putting-their-hands-together\ 1.jpg");
 
-  /* Full height */
-  height: 80vh;
+  height: 100%;
   width: 100%;
 
   filter: brightness(40%);
 
-  /* Center and scale the image nicely */
-
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   position: absolute;
   z-index: -1;
 }
 
-.donateArea-text{
-    margin-top: 7rem;
-}
+@media screen and (max-width: 476px) {
+  /* .bg-donateArea{
+    display: none;
+  } */
 
+  /* .donateArea-text{
+    color: black;
+  } */
+}
 
 

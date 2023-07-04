@@ -4,10 +4,10 @@ import "./DonateArea.css";
 
 const DonateArea = () => {
   return (
-    <div className="donateArea-conatiner text-white ">
+    <div className="donateArea-container text-white ">
       <div className="bg-donateArea"></div>
-      <section className="donateArea-text text-center container">
-        <h3 className="fs-1 fw-bold pt-5 ">
+      <section className="donateArea-text container d-flex flex-column justify-content-center align-items-center pb-5 text-center">
+        <h3 className="fs-1 fw-bold pt-4">
           Raise funds for a cause. Give Fundraisersis a free platform
         </h3>
         <p className="fw-normal pt-3">

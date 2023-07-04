@@ -10,7 +10,7 @@ const Description = () => {
   return (
     <div className="des-container">
     <div className="bg-des"></div>
-      <section className="container d-flex flex-column justify-content-start align-items-center pb-5">
+      <section className="container d-flex flex-column justify-content-center align-items-center pb-5">
         <h3 className="text-danger fw-bolder fs-1 pt-5 p-4">
           Featured Fundraisers
         </h3>

@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./DonateArea.css";
+import { Link } from "react-router-dom";
 
 const DonateArea = () => {
   return (
@@ -19,7 +20,7 @@ const DonateArea = () => {
           phasellus accumsan tristique nibh orci pharetra elit felis. Imperdiet
           in ipsum massa aenean.{" "}
         </p>
-        <button className="btn btn-danger fs-5 fw-bolder">Donate Now</button>
+        <Link to="/donateInfo" className="btn btn-danger fs-5 fw-bolder">Donate Now</Link>
       </section>
     </div>
   );

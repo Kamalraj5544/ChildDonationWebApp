@@ -22,27 +22,27 @@ const MainNavbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav mb-2 mb-lg-0 me-5">
-            <li className="nav-item">
+            <li className="nav-item item">
               <a className="nav-link text-white" aria-current="page" href="/">
                 Home
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item item">
               <a className="nav-link text-white" href="/aboutUs">
                 About Us
               </a>
             </li>
-            <li className="nav-item ">
+            <li className="nav-item item">
               <a className="nav-link text-white" href="/services">
                 Services
               </a>
             </li>
-            <li className="nav-item ">
+            <li className="nav-item item">
               <a className="nav-link text-white" href="/contactUs">
                 Contact Us
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item item">
               <Link to="/login" type="submit">
                 <button className="btn bg-white text-danger fw-bolder py-2 display-3">
                   Log In

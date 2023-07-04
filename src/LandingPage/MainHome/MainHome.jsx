@@ -10,6 +10,7 @@ import DonateArea from "../DonateArea/DonateArea";
 import Footer from "../../components/Footer/Footer";
 
 import groupPhoto from "../../assets/group-children-lying-reading-grass-field 1.jpg";
+import { Link } from "react-router-dom";
 
 const MainHome = () => {
   return (
@@ -27,9 +28,9 @@ const MainHome = () => {
                 <p className="fs-5 fw-normal pb-4">
                   Help Carmel Save Her From Malnutrition And Illness
                 </p>
-                <button className="btn btn-danger text-white fs-5 fw-bold">
+                <Link to="/donateInfo" className="btn btn-danger text-white fs-5 fw-bold">
                   Donate Now
-                </button>
+                </Link>
               </div>
             </section>
           </div>

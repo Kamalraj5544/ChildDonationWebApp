@@ -20,15 +20,12 @@ const DonateChildHome = () => {
 
       <BackroundSection image={cStudyBg2} contentName="Child Study" />
 
-      <br />
-      <br />
-
-      <section className="container my-5">
+      <section className="container pb-5">
         <div className="row">
-          <div className="col-8">
+          <div className="col-md-8">
             <DonateFormSection />
           </div>
-          <div className="col-4">
+          <div className="col-md-4">
             <div className="card border-0 bg-body-secondary">
               <img src={cCardImage} className="card-img-top" alt="childImage" />
               <div className="card-body">
@@ -47,26 +44,29 @@ const DonateChildHome = () => {
         </div>
       </section>
 
-      <section className="container py-5">
-        <h1 className="fw-bolder text-danger text-center mb-5">Related Cases</h1>
-        <div className="d-flex flex-row align-items-center">
-          <span className="fs-1 text-danger p-2">
-            <i class="bi bi-arrow-left-square-fill fw-bolder"></i>
-          </span>
-          <div className="row px-5">
-            <div className="col">
-              <ChildCard />
-            </div>
-            <div className="col">
-              <ChildCard />
-            </div>
-            <div className="col">
-              <ChildCard />
-            </div>
+      <section className="container pt-5">
+        <h1 className="fw-bolder text-danger text-center mb-5">
+          Related Cases
+        </h1>
+
+        <div className="row m-0 p-0 g-3">
+          <div className="col">
+            <ChildCard />
           </div>
-          <span className="fs-1 text-danger p-2">
-            <i class="bi bi-arrow-right-square-fill fw-bolder"></i>
-          </span>
+          <div className="col">
+            <ChildCard />
+          </div>
+          <div className="col">
+            <ChildCard />
+          </div>
+        </div>
+        <div className="d-flex flex-row align-items-center justify-content-center mt-4">
+          <button className="btn btn-danger me-3">
+            <i class="bi bi-arrow-left-square-fill fw-bolder fs-1"></i>
+          </button>
+          <button className="btn btn-danger">
+            <i class="bi bi-arrow-right-square-fill fw-bolder fs-1"></i>
+          </button>
         </div>
       </section>
 

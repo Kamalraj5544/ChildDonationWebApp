@@ -7,34 +7,33 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const DonateFormSection = () => {
   return (
     <>
-      <section className="w-100 container ">
-        <h1 className="fw-bolder mb-4">Donation Amount</h1>
+      <section className="w-100 container">
+        <h1 className="fw-bolder mb-2">Donation Amount</h1>
         <div
-          className="w-100 d-flex justify-content-between pb-3"
+          className="row m-0 p-0 g-2 mb-4"
           role="group"
           aria-label="Basic example"
         >
-          <button type="button" className="btn btn-danger mb-3 w-25 fw-bolder">
-            <span>&#8377;</span> 100
-          </button>
-          <button
-            type="button"
-            className="btn btn-danger ms-3 mb-3 w-25 fw-bolder"
-          >
-            <span>&#8377;</span> 300
-          </button>
-          <button
-            type="button"
-            className="btn btn-danger ms-3 mb-3 w-25 fw-bolder"
-          >
-            <span>&#8377;</span> 500
-          </button>
-          <button
-            type="button"
-            className="btn btn-danger ms-3 mb-3 w-25 fw-bolder"
-          >
-            Custom Amount
-          </button>
+          <div className="col">
+            <button type="button" className="btn btn-danger fw-bolder w-100">
+              <span>&#8377;</span> 100
+            </button>
+          </div>
+          <div className="col">
+            <button type="button" className="btn btn-danger fw-bolder w-100">
+              <span>&#8377;</span> 300
+            </button>
+          </div>
+          <div className="col">
+            <button type="button" className="btn btn-danger fw-bolder w-100">
+              <span>&#8377;</span> 500
+            </button>
+          </div>
+          <div className="col-6">
+            <button type="button" className="btn btn-danger w-100">
+              <span>&#8377;</span> Custom Amount
+            </button>
+          </div>
         </div>
 
         <input

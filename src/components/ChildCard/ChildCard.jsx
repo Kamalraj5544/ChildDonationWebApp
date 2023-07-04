@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ChildCard = () => {
   return (
-    <div className="card border-0 bg-body-secondary">
+    <div className="card border-0 bg-body-secondary mw-100">
       <img src={cCardImage} className="card-img-top" alt="childImage" />
       <div className="card-body">
         <h5 className="card-title fw-bolder fs-3">Frank Stephan</h5>

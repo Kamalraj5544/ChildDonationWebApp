@@ -8,7 +8,12 @@ import {
 import DonatorCard from "../../components/DonatorCard/DonatorCard";
 
 const DonatorSlider = () => {
-  const donatorsArray = [<DonatorCard />, <DonatorCard />, <DonatorCard />];
+  const donatorsArray = [
+    <DonatorCard />,
+    <DonatorCard />,
+    <DonatorCard />,
+    <DonatorCard />,
+  ];
   return (
     <div className="row mx-3">
       <div className="col-md-4">
@@ -27,9 +32,9 @@ const DonatorSlider = () => {
           <BsFillArrowLeftSquareFill />
         </span>
         <div className="row g-2">
-        {donatorsArray.map((element) => (
-          <div className="col">{element}</div>
-        ))}
+          {donatorsArray.map((element) => (
+            <div className="col">{element}</div>
+          ))}
         </div>
         <span className="fs-2 text-danger p-2  d-flex justify-content-center align-items-center">
           <BsFillArrowRightSquareFill />

@@ -1,18 +1,16 @@
-
-
 .volunteer-image{
     background-image: url("../../assets/volunteers-work-preparing-donations-charity\ 1.jpg");
     width: 100%;
     height: 100%;
 
-    background-position: center;
-    background-size: contain;
+    background-position: top;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative;
 }
 .bg-black-rotated{
     position: absolute;
-    width: 50%;
+    width: 100%;
     height: 100%;
     background-color: black;
 
@@ -21,7 +19,4 @@
 
 }
 
-.footer-section{
-    margin-top: 7rem;
-}
 

@@ -20,18 +20,18 @@ const MainHome = () => {
       <div className="bg-home"></div>
       <section className="home-container">
         <div className="row p-0 m-0">
-          <div className="col-sm-8">
+          <div className="col-sm-8 ps-4">
             <section className="home-text w-100 h-100 d-flex flex-column align-items-center justify-content-center ">
               <div>
-              <p className="fw-bolder display-3">
-                Give Food And Medical Care To Abandoned Elderly Parents
-              </p>
-              <p className="fs-5 fw-normal pb-4">
-                Help Carmel Save Her From Malnutrition And Illness
-              </p>
-              <button className="btn btn-danger text-white fs-5 fw-bold">
-                Donate Now
-              </button>
+                <p className="fw-bolder display-3">
+                  Give Food And Medical Care To Abandoned Elderly Parents
+                </p>
+                <p className="fs-5 fw-normal pb-4">
+                  Help Carmel Save Her From Malnutrition And Illness
+                </p>
+                <button className="btn btn-danger text-white fs-5 fw-bold">
+                  Donate Now
+                </button>
               </div>
             </section>
           </div>
@@ -76,7 +76,7 @@ const MainHome = () => {
         <DonatorSlider />
       </section>
 
-      <section className="">
+      <section>
         <DonateArea />
       </section>
 

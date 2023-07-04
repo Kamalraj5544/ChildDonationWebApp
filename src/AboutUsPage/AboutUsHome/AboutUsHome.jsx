@@ -17,13 +17,13 @@ const AboutUsHome = () => {
 
       <BackgroundSection image={aboutBg} contentName="About Us" />
 
-      <section className="container row my-5">
-        <div className="col-6">
+      <section className="row container-fluid my-5">
+        <div className="col-md-4 px-5">
           <div className="volunteer-image d-flex justify-content-center align-items-center">
-            <div className="bg-black-rotated "></div>
+            <div className="bg-black-rotated"></div>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-md-8">
           <h2 className="text-danger display-5 fw-bolder mb-5">About Us</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus

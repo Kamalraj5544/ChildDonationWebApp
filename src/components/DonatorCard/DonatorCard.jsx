@@ -14,7 +14,6 @@ const DonatorCard = () => {
       sx={{ maxWidth: "100%" }}
       style={{
         backgroundColor: "black",
-        marginLeft: "2rem",
       }}
     >
       <CardActionArea>

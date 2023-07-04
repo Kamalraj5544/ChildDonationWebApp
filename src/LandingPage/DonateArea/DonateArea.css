@@ -2,6 +2,8 @@
   position: relative;
   margin-top: 9rem;
   margin-bottom: 9rem;
+  width: 100%;
+  height: 80vh;
 }
 
 
@@ -20,14 +22,6 @@
   z-index: -1;
 }
 
-@media screen and (max-width: 476px) {
-  /* .bg-donateArea{
-    display: none;
-  } */
 
-  /* .donateArea-text{
-    color: black;
-  } */
-}
 
 

@@ -16,7 +16,7 @@ const Needers = () => {
   return (
     <>
       <section className="container mt-5">
-        <div className="row row-cols-3 g-5">
+        <div className="row row-cols-1 row-cols-sm-3 g-3">
           {childCardArray.map((ele) => (
             <div className="col">{ele}</div>
           ))}
@@ -28,16 +28,16 @@ const Needers = () => {
           Our Back Story
         </h2>
 
-        <div className="row">
-          <div className="col-6">
+        <div className="row m-0 p-0">
+          <div className="col-md-6">
             <img
               src={backStroryChild}
               alt="childImage"
-              className="w-100 h-100 "
+              className="w-100 h-100"
             />
           </div>
-          <div className="col-6 d-flex justify-content-center flex-column">
-            <h4 className="fw-bold my-5">Heart Broken Story</h4>
+          <div className="col-md-6 d-flex justify-content-center flex-column">
+            <h4 className="fw-bold my-5 text-center">Heart Broken Story</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus
               accumsan tristique nibh orci pharetra elit felis. Imperdiet in

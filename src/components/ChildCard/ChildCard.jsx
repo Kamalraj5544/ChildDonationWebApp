@@ -18,7 +18,7 @@ const ChildCard = () => {
           tristique nibh orci pharetra elit felis.
         </p>
       </div>
-      <div className="card-body">
+      <div className="card-body d-flex justify-content-center align-items-center">
         <Link to="/donateInfo" className="btn btn-danger fw-bolder">Donate Now</Link>
         <Link to="/ourDonators" className="btn border text-primary ms-3 bg-white">
           <i class="bi bi-share"></i>

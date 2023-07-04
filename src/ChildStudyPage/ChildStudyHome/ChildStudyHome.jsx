@@ -27,7 +27,7 @@ const ChildStudyHome = () => {
         </h2>
       </section>
 
-      <ul className="nav nav-pills mb-3 d-flex align-items-center justify-content-center " id="pills-tab" role="tablist">
+      <ul className="nav nav-pills mb-3 d-flex align-items-center justify-content-center" id="pills-tab" role="tablist">
         <div className="d-flex flex-row bg-body-secondary rounded">
           <li className="nav-item" role="presentation">
             <button

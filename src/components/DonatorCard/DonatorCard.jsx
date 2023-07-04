@@ -11,10 +11,10 @@ import donatorIcon from "../../assets/user-icon-person-symbol-human-avatar-3d-re
 const DonatorCard = () => {
   return (
     <Card
-      sx={{ width: "250px" }}
+      sx={{ maxWidth: "100%" }}
       style={{
         backgroundColor: "black",
-        marginLeft: "2rem"
+        marginLeft: "2rem",
       }}
     >
       <CardActionArea>
@@ -24,14 +24,14 @@ const DonatorCard = () => {
           image={donatorIcon}
           alt="donator icon"
         />
-        <CardContent style={{ height: "80px" }}>
+        <CardContent style={{ height: "5rem", padding: ".5rem" }}>
           <Typography gutterBottom component="div">
             <div className="w-100 text-center">
-            <span className="fw-normal text-white">Jude's Immanual</span>
+              <span className="fw-normal text-white">Jude's Immanual</span>
             </div>
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <div className="text-danger w-100 text-center">
+            <div className="text-danger fw-bold w-100 text-center">
               <span>&#8377;</span>
               <span>5000</span>
             </div>

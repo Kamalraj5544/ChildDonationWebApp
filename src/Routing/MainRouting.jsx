@@ -8,6 +8,7 @@ import Login from '../Login/Login'
 import AboutUsHome from '../AboutUsPage/AboutUsHome/AboutUsHome'
 import ChildStudyHome from '../ChildStudyPage/ChildStudyHome/ChildStudyHome'
 import ContactUsHome from '../ContactUsPage/ContactUsHome/ContactUsHome'
+import DonateChildHome from '../DonateChildPage/DonateChildHome/DonateChildHome'
 
 
 const MainRouting = () => {
@@ -19,6 +20,7 @@ const MainRouting = () => {
         <Route path='/services' element={<ChildStudyHome /> } />
         <Route path='/contactUs' element={<ContactUsHome /> } />
         <Route path='/login' element={<Login />} />
+        <Route path='/donateInfo' element={<DonateChildHome />} />
     </Routes>
   )
 }

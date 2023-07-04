@@ -14,12 +14,9 @@ const ContactUsHome = () => {
 
       <BackgroundSection image={contactUsBg} contentName="Contact Us" />
 
-      <br />
-      <br />
-      
-      <section className="my-5 container">
-        <div className="row">
-          <div className="col-6">
+      <section className="container">
+        <div className="row m-0 p-0">
+          <div className="col-md-6 mb-5">
             <h2 className="text-danger fs-4 fw-bolder mb-4">
               Get in Touch With us
             </h2>
@@ -31,46 +28,55 @@ const ContactUsHome = () => {
               amet consectetur.
             </p>
 
-            <div className="d-flex">
-              <div className="d-flex flex-row me-3 mb-3">
-                <span className="me-2">
-                  <i class="bi bi-telephone-fill text-white bg-red p-2 rounded-circle"></i>
-                </span>
-                <span>
-                  <p>9876543210</p>
-                  <p>9876543210</p>
-                </span>
+            <div className="row m-0 p-0">
+              <div className="col">
+                <div className="d-flex flex-row">
+                  <span className="me-3 mb-3">
+                    <i class="bi bi-telephone-fill text-white bg-red p-2 rounded-circle"></i>
+                  </span>
+                  <span>
+                    <p>+91 9876543210</p>
+                    <p>+91 9876543210</p>
+                  </span>
+                </div>
+                <span></span>
               </div>
-              <div className="d-flex flex-row me-3 mb-3">
-                <span className="me-2">
-                  <i class="bi bi-geo-alt-fill text-white bg-red p-2 rounded-circle"></i>
-                </span>
-                <span>
-                  <p>
-                    P. KRISHNANANDA RAO (VICE PRISIDENT) No. 17, Velmurugan
-                    Colony, Vadapalani , Chennai - 600 026
-                  </p>
-                </span>
+
+              <div className="col">
+                <div className="d-flex flex-row">
+                  <span className="me-3 mb-3">
+                    <i class="bi bi-geo-alt-fill text-white bg-red p-2 rounded-circle"></i>
+                  </span>
+                  <span>
+                    <p>
+                      P.KRISHNANANDA RAO(VICE PRISIDENT) No.17,Velmurugan
+                      Colony,Vadapalani,Chennai-600026
+                    </p>
+                  </span>
+                </div>
               </div>
-              <div className="d-flex flex-row me-3 mb-3 justify-content-center">
-                <span className="me-2">
-                  <i class="bi bi-envelope-at-fill text-white bg-red p-2 rounded-circle"></i>
-                </span>
-                <span>
-                  <div>Qwerty@gmail.com</div>
-                </span>
+
+              <div className="col ">
+                <div className="d-flex flex-row">
+                  <span className="me-3 mb-3">
+                    <i class="bi bi-envelope-at-fill text-white bg-red p-2 rounded-circle"></i>
+                  </span>
+                  <span>
+                    <div>Qwerty@gmail.com</div>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-          <div className="col-6">
+
+          <div className="col-md-6">
             <div className="d-flex container flex-column">
               <h4 className="fw-bold">Contact Us</h4>
-
               <div className="py-3 row1">
                 <div className="row">
                   <div className="col">
                     <label for="Name" className="fw-bold pb-2">
-                       Name
+                      Name
                     </label>
                     <input
                       type="text"

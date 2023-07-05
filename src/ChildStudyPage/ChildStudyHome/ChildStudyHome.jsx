@@ -1,8 +1,9 @@
-import React from "react";
+import { React, useState } from "react";
 
-import "./ChildStudyHome.css"
+import "./ChildStudyHome.css";
 
-import cStudyBg from "../../assets/children-syria-earthquake-2023 1.jpg";
+import cStudyBg1 from "../../assets/children-syria-earthquake-2023 1.jpg";
+import cStudyBg2 from "../../assets/volunteers-holding-box-containing-donations-charity 1 (1).jpg";
 
 import MainNavbar from "../../components/MainNavbar/MainNavbar";
 import BackgroundSection from "../../components/BackroundSection/BackgroundSection";
@@ -11,23 +12,29 @@ import Needers from "../Needers/Needers";
 import Donators from "../Donators/Donators";
 
 const ChildStudyHome = () => {
-
-
+  const [children, setChildren] = useState(true);
   return (
     <div className="childStudy-wrapper">
       <header>
         <MainNavbar />
       </header>
 
-      <BackgroundSection image={cStudyBg} contentName="Child Study" />
+      <BackgroundSection
+        image={children ? cStudyBg2 : cStudyBg1 }
+        contentName="Child Study"
+      />
 
       <section className="container my-5">
         <h2 className="fw-bolder fs-2 text-center text-danger my-5">
-          Loves Grows by Giving
+          {children ? "People who love changes" : "Loves Grows by Giving"}
         </h2>
       </section>
 
-      <ul className="nav nav-pills mb-3 d-flex align-items-center justify-content-center" id="pills-tab" role="tablist">
+      <ul
+        className="nav nav-pills mb-3 d-flex align-items-center justify-content-center"
+        id="pills-tab"
+        role="tablist"
+      >
         <div className="d-flex flex-row bg-body-secondary rounded">
           <li className="nav-item" role="presentation">
             <button
@@ -39,6 +46,7 @@ const ChildStudyHome = () => {
               role="tab"
               aria-controls="pills-home"
               aria-selected="true"
+              onClick={() => setChildren(false)}
             >
               Love Who Need
             </button>
@@ -53,6 +61,7 @@ const ChildStudyHome = () => {
               role="tab"
               aria-controls="pills-profile"
               aria-selected="false"
+              onClick={() => setChildren(true)}
             >
               Love Who Donates
             </button>

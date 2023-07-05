@@ -20,14 +20,13 @@ const Donators = () => {
   return (
     <div className="mt-5">
       <section className="container">
-        <div className="row row-cols-2 row-cols-md-5 g-4 mb-5">
+        <div className="row row-cols-2 row-cols-md-5 g-4">
           {donatorsListArray.map((ele) => (
             <div className="col">{ele}</div>
           ))}
         </div>
       </section>
 
-      <br />
       <br />
 
       <section>
@@ -37,7 +36,7 @@ const Donators = () => {
 
         <div className="row m-0 p-0">
           <div className="col-md-6 d-flex justify-content-center flex-column">
-            <h4 className="fw-bold my-5 text-center">Heart Broken Story</h4>
+            <h4 className="fw-bold mb-3">Heart Broken Story</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus
               accumsan tristique nibh orci pharetra elit felis. Imperdiet in

@@ -8,7 +8,7 @@ const BackgroundSection = ({image,contentName}) => {
     <div className="bg-content">
         <img src={image} className="w-100 h-100" alt='contentImage' />
     </div>
-        <div className="content fw-bolder container">{contentName}</div>
+        <div className="content fw-bolder container d-flex align-items-center">{contentName}</div>
     </div>
   )
 }

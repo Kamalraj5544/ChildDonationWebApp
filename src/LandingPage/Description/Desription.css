@@ -1,26 +1,28 @@
-.des-container{
-    position: relative;
+.des-container {
+  position: relative;
 }
 
-.bg-des{
-    position: absolute;
-    background-color: black;
-    width: 100%;
-    height:67%;
-    z-index: -1;
+.bg-des {
+  position: absolute;
+  background: #1f253b;
+  width: 100%;
+  height: 67%;
+  z-index: -1;
+}
+
+.bg-des-card {
+    background: rgba(0, 0, 0, 0.50);
+    height: 5rem;
 }
 
 @media screen and (max-width: 768px) {
-    .bg-des{
-        height: 80%;
-    }
+  .bg-des {
+    height: 80%;
   }
+}
 
-  
 @media screen and (max-width: 576px) {
-    .bg-des{
-        height: 100%;
-    }
+  .bg-des {
+    height: 100%;
   }
-  
-
+}

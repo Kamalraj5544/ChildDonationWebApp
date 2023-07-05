@@ -7,11 +7,16 @@
     border-radius: 8px;
 }
 
+    .item{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+
 .item:hover{
     
     background-color: rgb(245, 69, 69);
     cursor: pointer !important;
-    /* font-size: 1.1rem; */
     font-weight: 800;
 }
 

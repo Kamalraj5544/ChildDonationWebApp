@@ -19,53 +19,58 @@ const MainHome = () => {
       <div className="bg-home"></div>
       <section className="home-container">
         <div className="row p-0 m-0">
-          <div className="col-sm-8 ps-4">
-            <section className="home-text w-100 h-100 d-flex flex-column align-items-center justify-content-center ">
-              <div>
-                <p className="fw-bolder display-3">
+          <div className="col-md-8">
+            <section className=" w-100 h-100 d-flex justify-content-center align-items-center">
+              <div className="home-text">
+                <h3 className="display-3 fw-bolder">
                   Give Food And Medical Care To Abandoned Elderly Parents
-                </p>
-                <p className="fs-5 fw-normal pb-4">
+                </h3>
+                <p className="fs-5 fw-normal pb-4 m-0 p-0">
                   Help Carmel Save Her From Malnutrition And Illness
                 </p>
-                <Link to="/donateInfo" className="btn btn-danger text-white fs-5 fw-bold">
+                <Link
+                  to="/donateInfo"
+                  className="btn btn-danger text-white fs-5 fw-bold mb-4"
+                >
                   Donate Now
                 </Link>
               </div>
             </section>
           </div>
-          <div className="col-sm-4 maskImage p-0">
-            <img src={groupPhoto} alt="childPhoto" className="w-100" />
+          <div className="col-md-4 maskImage p-0 d-flex justify-content-center align-items-center">
+            <img src={groupPhoto} alt="childPhoto" className="w-100 h-100" />
           </div>
         </div>
       </section>
 
-      <div className="partner-box row m-0">
-        <section className="col-md-4">
-          <div className="card text-bg-dark mb-3 p-3">
-            <div className="card-header fs-2 fw-bold">Partners</div>
-            <div className="card-body">
-              <p className="card-text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s
-              </p>
-              <a
-                href="/"
-                className="card-link fw-bold text-danger border-bottom border-4 border-danger pb-1"
-              >
-                Read More
-              </a>
+      <section className="partner-box-container mb-5 pb-5">
+        <div className="partner-box row m-0 p-0 ms-4 ">
+          <section className="col-md-4">
+            <div className="card bg-partner-box mb-3 p-3">
+              <div className="card-header fs-2 fw-bold">Partners</div>
+              <div className="card-body">
+                <p className="card-text">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s
+                </p>
+                <a
+                  href="/"
+                  className="card-link fw-bold text-danger border-bottom border-4 border-danger pb-1"
+                >
+                  Read More
+                </a>
+              </div>
             </div>
-          </div>
-        </section>
-        <section className="col-md-8">
-          <div className="row w-100 h-50"></div>
-          <div className="row">
-            <PartnerLogos />
-          </div>
-        </section>
-      </div>
+          </section>
+          <section className="col-md-8">
+            <div className="row w-100 h-50 m-0 p-0"></div>
+            <div className="row">
+              <PartnerLogos />
+            </div>
+          </section>
+        </div>
+      </section>
 
       <section className="des-wrapper">
         <Description />

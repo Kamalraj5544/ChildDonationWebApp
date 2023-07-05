@@ -27,18 +27,23 @@ const DonatorSlider = () => {
           </p>
         </section>
       </div>
-      <div className="col-md-8 d-flex flex-row">
-        <span className="fs-2 text-danger p-2  d-flex justify-content-center align-items-center">
-          <BsFillArrowLeftSquareFill />
-        </span>
-        <div className="row g-2">
+      <div className="col-md-8">
+        <div className="row g-4">
           {donatorsArray.map((element) => (
             <div className="col">{element}</div>
           ))}
         </div>
-        <span className="fs-2 text-danger p-2  d-flex justify-content-center align-items-center">
-          <BsFillArrowRightSquareFill />
-        </span>
+        <div className="row">
+          <div className="d-flex justify-content-center align-items-center">
+            <span className="fs-2 text-danger p-2 ">
+              <BsFillArrowLeftSquareFill />
+            </span>
+
+            <span className="fs-2 text-danger p-2">
+              <BsFillArrowRightSquareFill />
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

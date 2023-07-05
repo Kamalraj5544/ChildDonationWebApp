@@ -21,7 +21,7 @@ const MainNavbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul className="navbar-nav mb-2 mb-lg-0 me-5">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
             <li className="nav-item item">
               <a className="nav-link text-white" aria-current="page" href="/">
                 Home
@@ -44,7 +44,7 @@ const MainNavbar = () => {
             </li>
             <li className="nav-item item">
               <Link to="/login" type="submit">
-                <button className="btn bg-white text-danger fw-bolder py-2 display-3">
+                <button className="btn bg-white text-danger fw-bolder px-3 py-2 fs-5">
                   Log In
                 </button>
               </Link>

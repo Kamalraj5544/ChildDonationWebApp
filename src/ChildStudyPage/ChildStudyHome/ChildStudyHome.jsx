@@ -1,4 +1,7 @@
-import { React, useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import "./ChildStudyHome.css";
 
@@ -12,6 +15,10 @@ import Needers from "../Needers/Needers";
 import Donators from "../Donators/Donators";
 
 const ChildStudyHome = () => {
+  useEffect(() => {
+    AOS.init();
+    window.scroll(0, 0);
+  }, []);
   const [children, setChildren] = useState(true);
   return (
     <div className="childStudy-wrapper">
@@ -20,11 +27,16 @@ const ChildStudyHome = () => {
       </header>
 
       <BackgroundSection
-        image={children ? cStudyBg2 : cStudyBg1 }
+        image={children ? cStudyBg2 : cStudyBg1}
         contentName="Child Study"
       />
 
-      <section className="container my-5">
+      <section
+        className="container my-5"
+        data-aos="fade-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1300"
+      >
         <h2 className="fw-bolder fs-2 text-center text-danger my-5">
           {children ? "People who love changes" : "Loves Grows by Giving"}
         </h2>
@@ -35,7 +47,12 @@ const ChildStudyHome = () => {
         id="pills-tab"
         role="tablist"
       >
-        <div className="d-flex flex-row bg-body-secondary rounded">
+        <div
+          className="d-flex flex-row bg-body-secondary rounded"
+          data-aos="fade-right"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1300"
+        >
           <li className="nav-item" role="presentation">
             <button
               className="nav-link active text-black"

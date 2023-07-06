@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import "./ContactUSHome.css"
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import "./ContactUSHome.css";
 
 import MainNavbar from "../../components/MainNavbar/MainNavbar";
 import BackgroundSection from "../../components/BackroundSection/BackgroundSection";
@@ -9,6 +12,10 @@ import Footer from "../../components/Footer/Footer";
 import contactUsBg from "../../assets/people-stacking-hands-together-park 1.jpg";
 
 const ContactUsHome = () => {
+  useEffect(() => {
+    AOS.init();
+    window.scroll(0, 0);
+  }, []);
   return (
     <div className="contactUs-wrapper">
       <header>
@@ -19,7 +26,12 @@ const ContactUsHome = () => {
 
       <section className="container">
         <div className="row m-0 p-0">
-          <div className="col-md-6 mb-5">
+          <div
+            className="col-md-6 mb-5"
+            data-aos="zoom-in-right"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1300"
+          >
             <h2 className="text-danger fs-4 fw-bolder mb-4">
               Get in Touch With us
             </h2>
@@ -72,7 +84,12 @@ const ContactUsHome = () => {
             </div>
           </div>
 
-          <div className="col-md-6">
+          <div
+            className="col-md-6"
+            data-aos="zoom-in-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1300"
+          >
             <div className="d-flex container flex-column">
               <h4 className="fw-bold">Contact Us</h4>
               <div className="py-3 row1">

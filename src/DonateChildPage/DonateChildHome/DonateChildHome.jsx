@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import "./DonateChildHome.css";
 
@@ -11,6 +14,10 @@ import Footer from "../../components/Footer/Footer";
 import cStudyBg2 from "../../assets/boy-lay-flat-laying-his-hands-belly-forehead-dry-soil 1.jpg";
 import cCardImage from "../../assets/medium-shot-happy-kids-posing 1.jpg";
 const DonateChildHome = () => {
+  useEffect(() => {
+    AOS.init();
+    window.scroll(0, 0);
+  }, []);
   return (
     <div className="donateChild-wrapper">
       <MainNavbar />
@@ -18,10 +25,14 @@ const DonateChildHome = () => {
 
       <section className="container pb-5">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-md-8" data-aos="zoom-in-right"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1300">
             <DonateFormSection />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4" data-aos="zoom-in-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1300">
             <div className="card border-0 bg-body-secondary">
               <img src={cCardImage} className="card-img-top" alt="childImage" />
               <div className="card-body">
@@ -46,17 +57,37 @@ const DonateChildHome = () => {
         </h1>
 
         <div className="row m-0 p-0 g-3">
-          <div className="col">
+          <div
+            className="col"
+            data-aos="zoom-in"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1300"
+          >
             <ChildCard />
           </div>
-          <div className="col">
+          <div
+            className="col"
+            data-aos="zoom-in"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1300"
+          >
             <ChildCard />
           </div>
-          <div className="col">
+          <div
+            className="col"
+            data-aos="zoom-in"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1300"
+          >
             <ChildCard />
           </div>
         </div>
-        <div className="d-flex flex-row align-items-center justify-content-center mt-4">
+        <div
+          className="d-flex flex-row align-items-center justify-content-center mt-4"
+          data-aos="zoom-out"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1300"
+        >
           <button className="btn btn-danger me-3">
             <i class="bi bi-arrow-left-square-fill fw-bolder fs-1"></i>
           </button>

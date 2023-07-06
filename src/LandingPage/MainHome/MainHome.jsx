@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./MainHome.css";
 
@@ -12,7 +12,14 @@ import Footer from "../../components/Footer/Footer";
 import groupPhoto from "../../assets/group-children-lying-reading-grass-field 1.jpg";
 import { Link } from "react-router-dom";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const MainHome = () => {
+  useEffect(() => {
+    AOS.init();
+    window.scroll(0, 0);
+  }, []);
   return (
     <>
       <MainNavbar />
@@ -21,7 +28,12 @@ const MainHome = () => {
         <div className="row p-0 m-0">
           <div className="col-md-8">
             <section className=" w-100 h-100 d-flex justify-content-center align-items-center">
-              <div className="home-text">
+              <div
+                className="home-text"
+                data-aos="fade-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1300"
+              >
                 <h3 className="display-3 fw-bolder">
                   Give Food And Medical Care To Abandoned Elderly Parents
                 </h3>
@@ -37,7 +49,12 @@ const MainHome = () => {
               </div>
             </section>
           </div>
-          <div className="col-md-4 maskImage p-0 d-flex justify-content-center align-items-center">
+          <div
+            className="col-md-4 maskImage p-0 d-flex justify-content-center align-items-center"
+            data-aos="zoom-out-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1300"
+          >
             <img src={groupPhoto} alt="childPhoto" className="w-100 h-100" />
           </div>
         </div>

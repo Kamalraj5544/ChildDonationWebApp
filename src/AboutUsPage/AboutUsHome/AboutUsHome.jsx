@@ -18,7 +18,7 @@ const AboutUsHome = () => {
       <BackgroundSection image={aboutBg} contentName="About Us" />
 
       <section className="row container-fluid my-5">
-        <div className="col-md-6 px-5">
+        <div className="col-md-4 px-5">
           <div className="volunteer-image d-flex justify-content-center align-items-center w-100">
             <div className="bg-black-rotated"></div>
           </div>

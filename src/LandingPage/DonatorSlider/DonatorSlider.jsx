@@ -17,7 +17,7 @@ const DonatorSlider = () => {
   return (
     <div className="row mx-3">
       <div className="col-md-4">
-        <section>
+        <section data-aos="fade-up" data-aos-duration="3000">
           <h3 className="fs-2 fw-bolder text-danger mb-4">Our Donators</h3>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -30,7 +30,14 @@ const DonatorSlider = () => {
       <div className="col-md-8">
         <div className="row g-4">
           {donatorsArray.map((element) => (
-            <div className="col">{element}</div>
+            <div
+              className="col"
+              data-aos="zoom-in"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1500"
+            >
+              {element}
+            </div>
           ))}
         </div>
         <div className="row">

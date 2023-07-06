@@ -25,7 +25,12 @@ const Description = () => {
       <section className="container">
         <div className="row row-col-md-1 g-4">
           <div className="col-sm">
-            <div className="card text-white border-0 rounded-0">
+            <div
+              className="card text-white border-0 rounded-0"
+              data-aos="zoom-in"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1300"
+            >
               <img src={cHealth} className="card-img" alt="..." />
               <div className="card-img-overlay p-0 d-flex justify-content-center align-items-end">
                 <p className="fw-bolder fs-3 bg-des-card w-100 m-0 d-flex justify-content-center align-items-center">
@@ -35,7 +40,12 @@ const Description = () => {
             </div>
           </div>
           <div className="col-sm">
-            <div className="card  text-white border-0 rounded-0">
+            <div
+              className="card  text-white border-0 rounded-0"
+              data-aos="zoom-in"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1300"
+            >
               <img src={cStudy} className="card-img" alt="..." />
               <div className="card-img-overlay d-flex justify-content-center align-items-end p-0">
                 <p className="fw-bolder fs-3 bg-des-card w-100 m-0 d-flex justify-content-center align-items-center">
@@ -45,7 +55,12 @@ const Description = () => {
             </div>
           </div>
           <div className="col-sm">
-            <div className="card text-white border-0 rounded-0">
+            <div
+              className="card text-white border-0 rounded-0"
+              data-aos="zoom-in"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1300"
+            >
               <img src={clegal} className="card-img" alt="..." />
               <div className="card-img-overlay d-flex justify-content-center align-items-end p-0">
                 <p className="fw-bolder fs-3 bg-des-card w-100 m-0 d-flex justify-content-center align-items-center">

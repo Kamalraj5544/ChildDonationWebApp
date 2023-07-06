@@ -5,9 +5,13 @@ import { Link } from "react-router-dom";
 
 const DonateArea = () => {
   return (
-    <div className="donateArea-container text-white ">
+    <div className="donateArea-container text-white">
       <div className="bg-donateArea"></div>
-      <section className="donateArea-text w-100 h-100 container d-flex flex-column justify-content-center align-items-center pb-5 text-center">
+      <section
+        className="donateArea-text w-100 h-100 container d-flex flex-column justify-content-center align-items-center pb-5 text-center"
+        data-aos="fade-down"
+        data-aos-duration="1300"
+      >
         <h3 className="fs-1 fw-bolder pt-4">
           Raise funds for a cause. Give Fundraisersis a free platform
         </h3>
@@ -20,7 +24,9 @@ const DonateArea = () => {
           phasellus accumsan tristique nibh orci pharetra elit felis. Imperdiet
           in ipsum massa aenean.{" "}
         </p>
-        <Link to="/donateInfo" className="btn btn-danger fs-5 fw-bolder">Donate Now</Link>
+        <Link to="/donateInfo" className="btn btn-danger fs-5 fw-bolder">
+          Donate Now
+        </Link>
       </section>
     </div>
   );

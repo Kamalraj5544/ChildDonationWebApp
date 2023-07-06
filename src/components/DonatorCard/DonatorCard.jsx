@@ -11,7 +11,7 @@ import donatorIcon from "../../assets/user-icon-person-symbol-human-avatar-3d-re
 const DonatorCard = () => {
   return (
     <Card
-      sx={{ maxWidth: "100%" }}
+      sx={{ width:"100%"}}
       style={{
         backgroundColor: "black",
       }}

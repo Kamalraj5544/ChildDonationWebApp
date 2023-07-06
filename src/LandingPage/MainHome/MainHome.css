@@ -52,6 +52,10 @@
   .home-text {
     padding: 0;
   }
+
+  .des-wrapper {
+    margin-bottom: 4rem;
+  }
   .des-cards {
     display: flex;
     flex-direction: column;

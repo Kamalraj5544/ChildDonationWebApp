@@ -28,10 +28,10 @@ const DonatorSlider = () => {
         </section>
       </div>
       <div className="col-md-8">
-        <div className="row g-4">
+        <div className="row g-4 ">
           {donatorsArray.map((element) => (
             <div
-              className="col"
+              className="col-sm-3"
               data-aos="zoom-in"
               data-aos-easing="ease-out-cubic"
               data-aos-duration="1500"

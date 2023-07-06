@@ -20,9 +20,7 @@ const DonateArea = () => {
           tristique nibh orci pharetra elit felis. Imperdiet in ipsum massa
           aenean. Lorem ipsum dolor sit amet consectetur. Ullamcorper phasellus
           accumsan tristique nibh orci pharetra elit felis. Imperdiet in ipsum
-          massa aenean. Lorem ipsum dolor sit amet consectetur. Ullamcorper
-          phasellus accumsan tristique nibh orci pharetra elit felis. Imperdiet
-          in ipsum massa aenean.{" "}
+          massa aenean.
         </p>
         <Link to="/donateInfo" className="btn btn-danger fs-5 fw-bolder">
           Donate Now

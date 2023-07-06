@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const MainNavbar = () => {
   return (
     <header className="header-section">
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg bg-red">
         <div className="container-fluid bg-red">
           <button
             className="navbar-toggler"

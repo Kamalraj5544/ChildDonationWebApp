@@ -1,8 +1,40 @@
+import axios from "axios";
 import React from "react";
+import { useState } from "react";
+
+import { apiBaseUrl } from "../../../BaseUrl";
 
 import { FiUpload } from "react-icons/fi";
 
+import { useNavigate } from "react-router-dom";
+
 const AddChild = () => {
+  const [childDetails, setChildDetails] = useState({
+    name:"",
+    addBy: "64a6b4f9ce2e1705901eed29",
+  });
+
+  const navigate = useNavigate();
+
+  const handlePostChildData = async () => {
+    await axios
+      .post(
+        `${apiBaseUrl}/neethimaan/createChildrenList?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjRhNmI0ZjljZTJlMTcwNTkwMWVlZDI5IiwiaWF0IjoxNjg4NjQ3MDYzfQ.kfwPj9B43M7MIGfxCtdJY5R7UjmW0aF0Jq5Qs3aBKfI`,
+        childDetails,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
+
+    navigate("/admin/childrenList");
+  };
   return (
     <div className="d-flex container flex-column border rounded p-4">
       <h4 className="text-danger fw-bold">Add Children Details</h4>
@@ -20,6 +52,12 @@ const AddChild = () => {
               placeholder="Enter your First name"
               aria-label="First name"
               id="firstName"
+              onChange={(e) =>
+                setChildDetails({
+                  ...childDetails,
+                  name: e.target.value
+                })
+              }
             />
           </div>
           <div className="col">
@@ -32,6 +70,7 @@ const AddChild = () => {
               placeholder="Enter your Last name"
               aria-label="Last name"
               id="LastName"
+              
             />
           </div>
         </div>
@@ -49,6 +88,9 @@ const AddChild = () => {
               placeholder="Age"
               aria-label="Age"
               id="age"
+              onChange={(e) =>
+                setChildDetails({ ...childDetails, age: +e.target.value })
+              }
             />
           </div>
           <div className="col">
@@ -59,11 +101,14 @@ const AddChild = () => {
               className="form-select"
               aria-label="Default select example"
               id="category"
+              onChange={(e) =>
+                setChildDetails({ ...childDetails, type: e.target.value })
+              }
             >
               <option selected>Select </option>
-              <option value="1">Child Study</option>
-              <option value="2">Child Health</option>
-              <option value="3">Free Legal</option>
+              <option value="Child study">Child Study</option>
+              <option value="Child health">Child Health</option>
+              <option value="Free Legal">Free Legal</option>
             </select>
           </div>
         </div>
@@ -75,12 +120,18 @@ const AddChild = () => {
         </label>
         <button
           id="imgUpload"
-          className="btn border bg-dark text-white fw-bold"
+          className="btn border bg-dark text-white fw-bold d-flex flex-row"
         >
-          <span className="me-3">
+          <span className="mt-2 me-2">
             <FiUpload />
           </span>
-          <span>Upload</span>
+          <input
+            class="form-control"
+            type="file"
+            onChange={(e) =>
+              setChildDetails({ ...childDetails, imageUrl: e.target.value })
+            }
+          />
         </button>
       </div>
 
@@ -93,6 +144,9 @@ const AddChild = () => {
           id="description"
           rows="4"
           placeholder="Type"
+          onChange={(e) =>
+            setChildDetails({ ...childDetails, description: e.target.value })
+          }
         ></textarea>
       </div>
 
@@ -100,7 +154,11 @@ const AddChild = () => {
         <button className="btn btn-outline-danger me-3" type="button">
           Cancel
         </button>
-        <button className="btn btn-danger" type="button">
+        <button
+          className="btn btn-danger"
+          type="button"
+          onClick={() => handlePostChildData()}
+        >
           Update
         </button>
       </div>

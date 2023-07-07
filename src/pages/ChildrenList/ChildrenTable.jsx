@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
@@ -12,8 +12,13 @@ import Modal from "@mui/material/Modal";
 
 import { Link } from "react-router-dom";
 
-function ChildModal() {
+import { apiBaseUrl } from "../../BaseUrl";
+import axios from "axios";
+
+function ChildModal({deleteId,handleDeleteClick}) {
   const [open, setOpen] = useState(false);
+
+  
   const handleOpen = () => {
     setOpen(true);
   };
@@ -26,7 +31,10 @@ function ChildModal() {
       <button
         className="col-2 btn btn-danger fw-bold"
         type="button"
-        onClick={handleOpen}
+        onClick={()=>{
+          handleOpen()
+          handleDeleteClick(deleteId);
+          }}
       >
         Delete
       </button>
@@ -57,9 +65,10 @@ function ChildModal() {
                 Cancel
               </button>
               <Link
-                to="/childrenList"
-                className="col-2 btn btn-danger fw-bold"
+                to="/admin/childrenList"
                 reloadDocument
+                className="col-2 btn btn-danger fw-bold"
+                onClick={() => handleDeleteClick(deleteId)}
               >
                 Delete
               </Link>
@@ -89,6 +98,8 @@ const style = {
 
 const ChildrenTable = () => {
   const [open, setOpen] = useState(false);
+  const [rows, setRows] = useState({});
+  const [deleteId, setDeleteId] = useState("")
   const handleOpen = () => {
     setOpen(true);
   };
@@ -96,10 +107,33 @@ const ChildrenTable = () => {
     setOpen(false);
   };
 
+  const handleDeleteClick =  async (id) => () => {
+    axios.delete(`${apiBaseUrl}/neethimaan/deleteChildrenListDetails?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjRhNmI0ZjljZTJlMTcwNTkwMWVlZDI5IiwiaWF0IjoxNjg4NjQ3MDYzfQ.kfwPj9B43M7MIGfxCtdJY5R7UjmW0aF0Jq5Qs3aBKfI`, { _id: id}); 
+
+  };
+
+  useEffect(() => {
+    getColumns();
+  }, []);
+
+  const getColumns = async function () {
+    await axios
+      .get(
+        `${apiBaseUrl}/neethimaan/findChildrenListDetails?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjRhNmI0ZjljZTJlMTcwNTkwMWVlZDI5IiwiaWF0IjoxNjg4NjQ3MDYzfQ.kfwPj9B43M7MIGfxCtdJY5R7UjmW0aF0Jq5Qs3aBKfI`
+      )
+      .then((res) => {
+        console.log(res.data.data);
+        const arr = [...res.data.data].map((obj, i) => {
+          return { ...obj, id: i + 1 };
+        });
+        setRows(arr);
+      });
+  };
+
   const columns = [
     { field: "id", headerName: "S.No", width: 70 },
-    { field: "childName", headerName: "Child Name", width: 130 },
-    { field: "Category", headerName: "Category", width: 130 },
+    { field: "name", headerName: "Child Name", width: 150 },
+    { field: "type", headerName: "Category", width: 130 },
     {
       field: "age",
       headerName: "Age",
@@ -118,14 +152,17 @@ const ChildrenTable = () => {
       field: "actions",
       type: "actions",
       headerName: "Actions",
-      width: 100,
+      width: 150,
       cellClassName: "actions",
-      getActions: () => {
+      getActions: ({_id}) => {
         return [
-          <div className="fs-5 text-primary cursor-pointer">
+          <div className="fs-5 text-primary cursor-pointer me-3">
             <BiEdit />
           </div>,
-          <div className="fs-5 text-danger cursor-pointer" onClick={handleOpen}>
+          <div className="fs-5 text-danger cursor-pointer" onClick={() => {
+            handleOpen()
+            setDeleteId(_id);
+            }}>
             <MdDelete />
             <Modal
               open={open}
@@ -168,12 +205,12 @@ const ChildrenTable = () => {
                       </div>
                       <div className="row d-flex justify-content-center align-items-center w-100">
                         <Link
+                        to="/admin/childrenList"
                           className="col-2 btn btn-outline-danger me-3 fw-bold text-black"
-                          reloadDocument
                         >
                           Cancel
                         </Link>
-                        <ChildModal />
+                        <ChildModal deleteId = {deleteId} handleDeleteClick={handleDeleteClick} />
                       </div>
                     </div>
                   </div>
@@ -186,88 +223,88 @@ const ChildrenTable = () => {
     },
   ];
 
-  const rows = [
-    {
-      id: 1,
-      Category: "Child Study",
-      childName: "Leo Grace",
-      age: 15,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 2,
-      Category: "Child Study",
-      childName: "Leo Grace",
-      age: 15,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 3,
-      Category: "Child Study",
-      childName: "Leo Grace",
-      age: 15,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 4,
-      Category: "Child Study",
-      childName: "Leo Grace",
-      age: 15,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 5,
-      Category: "Child Study",
-      childName: "Leo Grace",
-      age: 15,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 6,
-      Category: "Child Study",
-      childName: "Leo Grace",
-      age: 15,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 7,
-      Category: "Child Study",
-      childName: "Leo Grace",
-      age: 15,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 8,
-      Category: "Child Study",
-      childName: "Leo Grace",
-      age: 15,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 9,
-      Category: "Child Study",
-      childName: "Leo Grace",
-      age: 15,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      id: 10,
-      Category: "Child Study",
-      childName: "Leo Grace",
-      age: 15,
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-  ];
+  // const rows = [
+  //   {
+  //     id: 1,
+  //     Category: "Child Study",
+  //     childName: "Leo Grace",
+  //     age: 15,
+  //     description:
+  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  //   },
+  //   {
+  //     id: 2,
+  //     Category: "Child Study",
+  //     childName: "Leo Grace",
+  //     age: 15,
+  //     description:
+  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  //   },
+  //   {
+  //     id: 3,
+  //     Category: "Child Study",
+  //     childName: "Leo Grace",
+  //     age: 15,
+  //     description:
+  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  //   },
+  //   {
+  //     id: 4,
+  //     Category: "Child Study",
+  //     childName: "Leo Grace",
+  //     age: 15,
+  //     description:
+  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  //   },
+  //   {
+  //     id: 5,
+  //     Category: "Child Study",
+  //     childName: "Leo Grace",
+  //     age: 15,
+  //     description:
+  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  //   },
+  //   {
+  //     id: 6,
+  //     Category: "Child Study",
+  //     childName: "Leo Grace",
+  //     age: 15,
+  //     description:
+  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  //   },
+  //   {
+  //     id: 7,
+  //     Category: "Child Study",
+  //     childName: "Leo Grace",
+  //     age: 15,
+  //     description:
+  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  //   },
+  //   {
+  //     id: 8,
+  //     Category: "Child Study",
+  //     childName: "Leo Grace",
+  //     age: 15,
+  //     description:
+  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  //   },
+  //   {
+  //     id: 9,
+  //     Category: "Child Study",
+  //     childName: "Leo Grace",
+  //     age: 15,
+  //     description:
+  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  //   },
+  //   {
+  //     id: 10,
+  //     Category: "Child Study",
+  //     childName: "Leo Grace",
+  //     age: 15,
+  //     description:
+  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  //   },
+  // ];
 
   return (
     <div style={{ height: 400, width: "100%" }}>

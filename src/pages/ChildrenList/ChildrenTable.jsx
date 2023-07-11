@@ -15,10 +15,9 @@ import { Link } from "react-router-dom";
 import { apiBaseUrl } from "../../BaseUrl";
 import axios from "axios";
 
-function ChildModal({deleteId,handleDeleteClick}) {
+function ChildModal({ deleteId }) {
   const [open, setOpen] = useState(false);
 
-  
   const handleOpen = () => {
     setOpen(true);
   };
@@ -26,15 +25,25 @@ function ChildModal({deleteId,handleDeleteClick}) {
     setOpen(false);
   };
 
+  const handleDeleteClick = (id) => {
+    axios.delete(
+      `${apiBaseUrl}/neethimaan/deleteChildrenListDetails?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjRhNmI0ZjljZTJlMTcwNTkwMWVlZDI5IiwiaWF0IjoxNjg4NjQ3MDYzfQ.kfwPj9B43M7MIGfxCtdJY5R7UjmW0aF0Jq5Qs3aBKfI`,
+      {
+        data: {
+          _id: id,
+        },
+      }
+    );
+  };
+
   return (
     <React.Fragment>
       <button
         className="col-2 btn btn-danger fw-bold"
         type="button"
-        onClick={()=>{
-          handleOpen()
-          handleDeleteClick(deleteId);
-          }}
+        onClick={() => {
+          handleOpen();
+        }}
       >
         Delete
       </button>
@@ -65,7 +74,6 @@ function ChildModal({deleteId,handleDeleteClick}) {
                 Cancel
               </button>
               <Link
-                to="/admin/childrenList"
                 reloadDocument
                 className="col-2 btn btn-danger fw-bold"
                 onClick={() => handleDeleteClick(deleteId)}
@@ -97,19 +105,20 @@ const style = {
 };
 
 const ChildrenTable = () => {
-  const [open, setOpen] = useState(false);
   const [rows, setRows] = useState({});
-  const [deleteId, setDeleteId] = useState("")
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [deleteId, setDeleteId] = useState("");
 
-  const handleDeleteClick =  async (id) => () => {
-    axios.delete(`${apiBaseUrl}/neethimaan/deleteChildrenListDetails?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjRhNmI0ZjljZTJlMTcwNTkwMWVlZDI5IiwiaWF0IjoxNjg4NjQ3MDYzfQ.kfwPj9B43M7MIGfxCtdJY5R7UjmW0aF0Jq5Qs3aBKfI`, { _id: id}); 
+  const [oneChild, setOneChild] = useState({});
 
+  const handleDeleteClick = (id) => {
+    axios.delete(
+      `${apiBaseUrl}/neethimaan/deleteChildrenListDetails?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjRhNmI0ZjljZTJlMTcwNTkwMWVlZDI5IiwiaWF0IjoxNjg4NjQ3MDYzfQ.kfwPj9B43M7MIGfxCtdJY5R7UjmW0aF0Jq5Qs3aBKfI`,
+      {
+        data: {
+          _id: id,
+        },
+      }
+    );
   };
 
   useEffect(() => {
@@ -118,9 +127,7 @@ const ChildrenTable = () => {
 
   const getColumns = async function () {
     await axios
-      .get(
-        `${apiBaseUrl}/neethimaan/findChildrenListDetails?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjRhNmI0ZjljZTJlMTcwNTkwMWVlZDI5IiwiaWF0IjoxNjg4NjQ3MDYzfQ.kfwPj9B43M7MIGfxCtdJY5R7UjmW0aF0Jq5Qs3aBKfI`
-      )
+      .get(`${apiBaseUrl}/neethimaan/findChildrenListDetails`)
       .then((res) => {
         console.log(res.data.data);
         const arr = [...res.data.data].map((obj, i) => {
@@ -128,6 +135,13 @@ const ChildrenTable = () => {
         });
         setRows(arr);
       });
+  };
+
+  const getOneChild = function (deleteId) {
+    rows.map((item) => {
+      if (item._id === deleteId) setOneChild(item);
+      return item;
+    });
   };
 
   const columns = [
@@ -154,17 +168,28 @@ const ChildrenTable = () => {
       headerName: "Actions",
       width: 150,
       cellClassName: "actions",
-      getActions: ({_id}) => {
+      getActions: ({ id }) => {
         return [
           <div className="fs-5 text-primary cursor-pointer me-3">
             <BiEdit />
           </div>,
-          <div className="fs-5 text-danger cursor-pointer" onClick={() => {
-            handleOpen()
-            setDeleteId(_id);
-            }}>
+          <div
+            className="fs-5 text-danger cursor-pointer"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            onClick={() => {
+              // handleOpen();
+              rows.map((item) => {
+                if (item.id === id) setDeleteId(item._id);
+                return item;
+              });
+              console.log(deleteId);
+              getOneChild(deleteId);
+            }}
+          >
             <MdDelete />
-            <Modal
+            {/* <Modal
               open={open}
               onClose={handleClose}
               aria-labelledby="parent-modal-title"
@@ -173,9 +198,9 @@ const ChildrenTable = () => {
               <Box sx={{ ...style, width: 1100, borderRadius: "15px" }}>
                 <div className="container d-flex p-3">
                   <div className="row">
-                    <div className="col-3">
+                    <div className="col-3 w-25">
                       <img
-                        src="https://st2.depositphotos.com/1189140/45343/i/600/depositphotos_453431896-stock-photo-full-body-excited-little-african.jpg"
+                        src={oneChild.imageUrl}
                         alt="childImage"
                         className="w-100 h-100 object-fit-cover"
                       />
@@ -183,128 +208,39 @@ const ChildrenTable = () => {
                     <div className="ms-4 col-8">
                       <div className="row pb-4">
                         <div className="col fw-bold">Name:</div>
-                        <p className="col">Leo Grace</p>
+                        <p className="col">{oneChild.name}</p>
                       </div>
                       <div className="row pb-4">
                         <div className="col fw-bold">Category:</div>
-                        <p className="col">child study</p>
+                        <p className="col">{oneChild.type}</p>
                       </div>
                       <div className="row pb-4">
                         <div className="col fw-bold">Age:</div>
-                        <div className="col">15</div>
+                        <div className="col">{oneChild.age}</div>
                       </div>
                       <div className="row pb-4">
                         <div className="col fw-bold">Descrpition:</div>
-                        <p className="col">
-                          Lorem Ipsum is simply dummy text of the printing and
-                          typesetting industry. Lorem Ipsum has been the
-                          industry's standard dummy text ever since the 1500s,
-                          when an unknown printer took a galley of type and
-                          scrambled it to make a type specimen book
-                        </p>
+                        <p className="col">{oneChild.descrpition}</p>
                       </div>
                       <div className="row d-flex justify-content-center align-items-center w-100">
-                        <Link
-                        to="/admin/childrenList"
+                        <button
                           className="col-2 btn btn-outline-danger me-3 fw-bold text-black"
+                          onClick={() => handleClose()}
                         >
                           Cancel
-                        </Link>
-                        <ChildModal deleteId = {deleteId} handleDeleteClick={handleDeleteClick} />
+                        </button>
+                        <ChildModal deleteId={deleteId} />
                       </div>
                     </div>
                   </div>
                 </div>
               </Box>
-            </Modal>
+            </Modal> */}
           </div>,
         ];
       },
     },
   ];
-
-  // const rows = [
-  //   {
-  //     id: 1,
-  //     Category: "Child Study",
-  //     childName: "Leo Grace",
-  //     age: 15,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 2,
-  //     Category: "Child Study",
-  //     childName: "Leo Grace",
-  //     age: 15,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 3,
-  //     Category: "Child Study",
-  //     childName: "Leo Grace",
-  //     age: 15,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 4,
-  //     Category: "Child Study",
-  //     childName: "Leo Grace",
-  //     age: 15,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 5,
-  //     Category: "Child Study",
-  //     childName: "Leo Grace",
-  //     age: 15,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 6,
-  //     Category: "Child Study",
-  //     childName: "Leo Grace",
-  //     age: 15,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 7,
-  //     Category: "Child Study",
-  //     childName: "Leo Grace",
-  //     age: 15,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 8,
-  //     Category: "Child Study",
-  //     childName: "Leo Grace",
-  //     age: 15,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 9,
-  //     Category: "Child Study",
-  //     childName: "Leo Grace",
-  //     age: 15,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  //   {
-  //     id: 10,
-  //     Category: "Child Study",
-  //     childName: "Leo Grace",
-  //     age: 15,
-  //     description:
-  //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  //   },
-  // ];
 
   return (
     <div style={{ height: 400, width: "100%" }}>
@@ -319,6 +255,54 @@ const ChildrenTable = () => {
         pageSizeOptions={[5, 10]}
         checkboxSelection
       />
+
+      <div
+        className="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog  modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body d-flex flex-column justify-content-center align-items-center">
+              <div className="fs-1 text-danger">
+                <GiCancel />
+              </div>
+              <h4>Are You Sure ?</h4>
+              <p>
+               This action will delete permanently!
+              </p>
+            </div>
+            <div className="modal-footer">
+              <div className="d-flex justify-content-center align-items-center w-100">
+                <button
+                  className="col-2 btn btn-outline-danger me-3 fw-bold"
+                  type="button"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+                <Link
+                  reloadDocument
+                  className="col-2 btn btn-danger fw-bold"
+                  onClick={() => handleDeleteClick(deleteId)}
+                >
+                  Delete
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

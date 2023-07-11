@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import { apiBaseUrl } from "../../../BaseUrl";
 
@@ -13,13 +13,6 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
 const AddChild = () => {
-
-  const ageInput = document.getElementById('age');
-
-  ageInput.oninvalid = function(event) {
-    event.target.setCustomValidity('Please enter a valid age');
-  }
-
   const [childDetails, setChildDetails] = useState({
     name: "",
     addBy: "64a6b4f9ce2e1705901eed29",
@@ -28,7 +21,6 @@ const AddChild = () => {
     type: "",
     imageUrl: "",
   });
-
 
   const handlePostChildData = async () => {
     await axios
@@ -57,6 +49,7 @@ const AddChild = () => {
 
       <ToastContainer />
 
+      
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -94,7 +87,6 @@ const AddChild = () => {
                 placeholder="Enter your Last name"
                 aria-label="Last name"
                 id="LastName"
-                pattern="/^[a-zA-Z]{2,40}([a-zA-Z]{2,40})+$/"
               />
             </div>
           </div>
@@ -153,7 +145,7 @@ const AddChild = () => {
               <FiUpload />
             </span>
             <input
-              class="form-control"
+              className="form-control"
               type="file"
               onChange={(e) =>
                 setChildDetails({ ...childDetails, imageUrl: e.target.value })

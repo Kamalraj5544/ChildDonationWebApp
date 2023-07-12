@@ -11,16 +11,18 @@ import ContactUsHome from '../ContactUsPage/ContactUsHome/ContactUsHome'
 import DonateChildHome from '../DonateChildPage/DonateChildHome/DonateChildHome'
 
 
+
 const MainRouting = () => {
   return (
     <Routes>
         <Route path='/' element={<MainHome />} />
-        <Route path='/admin/:id' element={<AdminPage />} />
         <Route path='/aboutUs' element={<AboutUsHome />} />
         <Route path='/services' element={<ChildStudyHome /> } />
         <Route path='/contactUs' element={<ContactUsHome /> } />
         <Route path='/login' element={<Login />} />
         <Route path='/donateInfo' element={<DonateChildHome />} />
+        <Route path='/admin/:pageName' element={<AdminPage />} />
+        <Route path='/admin/:pageName/:childId' element={<AdminPage />} />
     </Routes>
   )
 }

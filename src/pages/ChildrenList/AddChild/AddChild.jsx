@@ -1,21 +1,43 @@
-import React from "react";
-import { useState, useRef } from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 
 import { apiBaseUrl } from "../../../BaseUrl";
 
 import { FiUpload } from "react-icons/fi";
-
-import { useNavigate } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
 
-const AddChild = () => {
+import { useNavigate } from "react-router-dom";
+
+const AddChild = ({ add, childId }) => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    childId !== undefined &&
+      axios
+        .get(
+          `${apiBaseUrl}/neethimaan/findOneChildrenListDetails?_id=${childId}`
+        )
+        .then((res) => {
+          setChildDetails({
+            name: res.data.data.name,
+            description: res.data.data.description,
+            type: res.data.data.type,
+            age: res.data.data.age,
+          });
+        });
+  }, []);
+
   const [childDetails, setChildDetails] = useState({
     name: "",
-    addBy: "64a6b4f9ce2e1705901eed29",
+    addBy: {
+      _id: "64a6b4f9ce2e1705901eed29",
+      name: "neethimaan",
+      number: 1234567890,
+      emailId: "admin@neethimaan.com",
+    },
     age: "",
     description: "",
     type: "",
@@ -29,8 +51,6 @@ const AddChild = () => {
         childDetails
       )
       .then((res) => {
-        console.log(res);
-        console.log(res.data);
         res.status === 200
           ? toast.success("Successfully added!", {
               position: toast.POSITION.TOP_RIGHT,
@@ -40,20 +60,57 @@ const AddChild = () => {
             });
       });
 
+    setChildDetails({
+      name: "",
+      addBy: {
+        _id: "64a6b4f9ce2e1705901eed29",
+        name: "neethimaan",
+        number: 1234567890,
+        emailId: "admin@neethimaan.com",
+      },
+      age: "",
+      description: "",
+      type: "",
+      imageUrl: "",
+    });
+
     // navigate("/admin/childrenList");
   };
+
+  const handleUpdateChildData = async (id) => {
+    await axios
+      .put(
+        `${apiBaseUrl}/neethimaan/updateChildrenListDetails?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjRhNmI0ZjljZTJlMTcwNTkwMWVlZDI5IiwiaWF0IjoxNjg4NjQ3MDYzfQ.kfwPj9B43M7MIGfxCtdJY5R7UjmW0aF0Jq5Qs3aBKfI`,
+        { ...childDetails, _id: id }
+      )
+      .then((res) => {
+        res.status === 200
+          ? toast.success("Successfully Updated!", {
+              position: toast.POSITION.TOP_RIGHT,
+            })
+          : toast.error("Something went wrong!", {
+              position: toast.POSITION.TOP_RIGHT,
+            });
+      });
+
+    navigate("/admin/childrenList");
+  };
+
   return (
     <div className="d-flex container flex-column border rounded p-4">
-      <h4 className="text-danger fw-bold">Add Children Details</h4>
+      <h4 className="text-danger fw-bold">
+        {add === "true" ? "Add Children Details" : "Update Children details"}
+      </h4>
       <hr />
 
       <ToastContainer />
 
-      
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handlePostChildData();
+          add === "true"
+            ? handlePostChildData()
+            : handleUpdateChildData(childId);
         }}
       >
         <div className="py-3 row1">
@@ -68,6 +125,7 @@ const AddChild = () => {
                 placeholder="Enter your First name"
                 aria-label="First name"
                 id="firstName"
+                value={childDetails.name}
                 required
                 onChange={(e) =>
                   setChildDetails({
@@ -105,6 +163,7 @@ const AddChild = () => {
                 aria-label="Age"
                 id="age"
                 pattern="[0-9]{1,2}"
+                value={childDetails.age}
                 required
                 onChange={(e) =>
                   setChildDetails({ ...childDetails, age: e.target.value })
@@ -120,11 +179,13 @@ const AddChild = () => {
                 aria-label="Default select example"
                 id="category"
                 required
+                defaultValue={childDetails.type}
+                value={childDetails.type}
                 onChange={(e) =>
                   setChildDetails({ ...childDetails, type: e.target.value })
                 }
               >
-                <option selected>Select </option>
+                <option selected={childDetails.type}>Select </option>
                 <option value="Child study">Child Study</option>
                 <option value="Child health">Child Health</option>
                 <option value="Free Legal">Free Legal</option>
@@ -163,6 +224,7 @@ const AddChild = () => {
             id="description"
             rows="4"
             placeholder="Type"
+            value={childDetails.description}
             required
             onChange={(e) =>
               setChildDetails({ ...childDetails, description: e.target.value })
@@ -175,7 +237,7 @@ const AddChild = () => {
             Cancel
           </button>
           <button className="btn btn-danger" type="submit">
-            Update
+            {add === "true" ? "Add" : "Update"}
           </button>
         </div>
       </form>

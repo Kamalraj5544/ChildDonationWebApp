@@ -10,7 +10,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { apiBaseUrl } from "../../BaseUrl";
 import axios from "axios";
@@ -105,7 +105,10 @@ const style = {
 };
 
 const ChildrenTable = () => {
+
+  const navigate = useNavigate();
   const [rows, setRows] = useState({});
+  const [editId, setEditId] = useState("");
   const [deleteId, setDeleteId] = useState("");
 
   const [oneChild, setOneChild] = useState({});
@@ -159,7 +162,7 @@ const ChildrenTable = () => {
       headerName: "Description",
       description: "This column has a value getter and is not sortable.",
       sortable: false,
-      width: 500,
+      width: 200,
     },
 
     {
@@ -170,22 +173,29 @@ const ChildrenTable = () => {
       cellClassName: "actions",
       getActions: ({ id }) => {
         return [
-          <div className="fs-5 text-primary cursor-pointer me-3">
+          <button
+            className="fs-4 btn text-primary cursor-pointer me-3"
+            onClick={() => {
+              rows.map((item) => {
+                if (item.id === id) {setEditId(item._id)
+                navigate("/admin/childrenListUpdate/"+item._id)
+                };
+                return item;
+              });
+            }}
+          >
             <BiEdit />
-          </div>,
+          </button>,
           <div
-            className="fs-5 text-danger cursor-pointer"
+            className="fs-4 text-danger cursor-pointer"
             type="button"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
             onClick={() => {
-              // handleOpen();
               rows.map((item) => {
                 if (item.id === id) setDeleteId(item._id);
                 return item;
               });
-              console.log(deleteId);
-              getOneChild(deleteId);
             }}
           >
             <MdDelete />
@@ -278,9 +288,7 @@ const ChildrenTable = () => {
                 <GiCancel />
               </div>
               <h4>Are You Sure ?</h4>
-              <p>
-               This action will delete permanently!
-              </p>
+              <p>This action will delete permanently!</p>
             </div>
             <div className="modal-footer">
               <div className="d-flex justify-content-center align-items-center w-100">

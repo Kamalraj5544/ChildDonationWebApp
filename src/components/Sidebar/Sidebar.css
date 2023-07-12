@@ -1,26 +1,22 @@
-
-
 .nav-item {
-    color: white;
-    margin-top: 0.5rem;
-    padding: 1rem;
-    border-radius: 8px;
+  color: white;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-    .item{
-        display: flex;
-        justify-content: center;
-        align-items:center;
-    }
-
-.item:hover{
-    
-    background-color: rgb(245, 69, 69);
-    cursor: pointer !important;
-    font-weight: 800;
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.item:hover {
+  background-color: rgb(245, 69, 69);
+  cursor: pointer !important;
+  font-weight: 800;
+}
 
 .activetab {
-    background-color: rgb(245, 69, 69);
+  background-color: rgb(245, 69, 69) !important;
 }

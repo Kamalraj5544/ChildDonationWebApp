@@ -12,7 +12,7 @@ import AddChild from "../pages/ChildrenList/AddChild/AddChild";
 import AddDonator from "../pages/DonatorsList/AddDonator/AddDonator";
 
 const AdminPage = () => {
-  const { id } = useParams();
+  const { pageName,childId } = useParams();
 
   return (
     <div>
@@ -22,12 +22,13 @@ const AdminPage = () => {
         </div>
         <div className="col">
           <NavBar />
-          {id === "dashboard" && <Home />}
-          {id === "childrenList" && <ChildrenList />}
-          {id === "donatorsList" && <DonatorsList />}
-          {id === "paymentDetails" && <PaymentDetails />}
-          {id === "childrenListAdd" && <AddChild />}
-          {id === "donatorsListAdd" && <AddDonator />}
+          {pageName === "dashboard" && <Home />}
+          {pageName === "childrenList" && <ChildrenList />}
+          {pageName === "donatorsList" && <DonatorsList />}
+          {pageName === "paymentDetails" && <PaymentDetails />}
+          {pageName === "childrenListAdd" && <AddChild add="true" />}
+          {pageName === "childrenListUpdate" && <AddChild add="false" childId={childId} />}
+          {pageName === "donatorsListAdd" && <AddDonator />}
         </div>
       </div>
     </div>

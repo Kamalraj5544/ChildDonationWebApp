@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 
 import { DataGrid } from "@mui/x-data-grid";
 
+import Moment from "moment";
+
 import { apiBaseUrl } from "../../BaseUrl";
 import axios from "axios";
 
 const columns = [
   { field: "id", headerName: "S.No", width: 70 },
-  { field: "name", headerName: "Name", width: 130 },
+  { field: "name", headerName: "First name", width: 130 },
+  { field: "lastName", headerName: "Last name", width: 130 },
   {
     field: "amount",
     headerName: "Amount",
@@ -15,11 +18,11 @@ const columns = [
     width: 90,
   },
   {
-    field: "createdAt",
+    field: "date",
     headerName: "Payment Date",
     description: "This column has a value getter and is not sortable.",
     sortable: false,
-    width: 230,
+    width: 120,
   },
 
   { field: "role", headerName: "Role", width: 130 },
@@ -30,7 +33,6 @@ const columns = [
 ];
 
 const PaymentTable = () => {
-
   const [rows, setRows] = useState({});
 
   useEffect(() => {
@@ -45,7 +47,8 @@ const PaymentTable = () => {
       .then((res) => {
         console.log(res.data.data);
         const arr = [...res.data.data].map((obj, i) => {
-          return { ...obj, id: i + 1 };
+          let tempdate = Moment(obj.createdAt).format("DD-MM-YYYY");
+          return { ...obj, id: i + 1, date: tempdate };
         });
         setRows(arr);
       })

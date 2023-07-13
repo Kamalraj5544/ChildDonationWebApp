@@ -272,7 +272,7 @@ const AddDonator = ({ add, donatorId }) => {
                 </option>
                 <option value="razorpay">Razor pay</option>
                 <option value="Card">Card</option>
-                <option value="Cash">Cash</option>
+                <option value="inhand">Cash</option>
               </select>
             </div>
             <div className="col">

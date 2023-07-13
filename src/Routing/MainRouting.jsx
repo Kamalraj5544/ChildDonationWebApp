@@ -9,6 +9,7 @@ import AboutUsHome from '../AboutUsPage/AboutUsHome/AboutUsHome'
 import ChildStudyHome from '../ChildStudyPage/ChildStudyHome/ChildStudyHome'
 import ContactUsHome from '../ContactUsPage/ContactUsHome/ContactUsHome'
 import DonateChildHome from '../DonateChildPage/DonateChildHome/DonateChildHome'
+import DonatorUpdate from '../AdminPage/DonatorUpdate/DonatorUpdate'
 
 
 
@@ -23,7 +24,7 @@ const MainRouting = () => {
         <Route path='/donateInfo' element={<DonateChildHome />} />
         <Route path='/admin/:pageName' element={<AdminPage />} />
         <Route path='/admin/:pageName/:childId' element={<AdminPage />} />
-        <Route path='/admin/:pageName/updateDonator/:donatorId' element={<AdminPage />} />
+        <Route path='/admin/donatorsListUpdate/:donatorId' element={<DonatorUpdate />} />
     </Routes>
   )
 }

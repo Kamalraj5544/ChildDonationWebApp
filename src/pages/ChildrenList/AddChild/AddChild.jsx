@@ -190,9 +190,9 @@ const AddChild = ({ add, childId }) => {
                 }
               >
                 <option selected={childDetails.type}>Select </option>
-                <option value="Child study">Child Study</option>
-                <option value="Child health">Child Health</option>
-                <option value="Free Legal">Free Legal</option>
+                <option value="childstudy">Child Study</option>
+                <option value="childhealth">Child Health</option>
+                <option value="freelegal">Free Legal</option>
               </select>
             </div>
           </div>

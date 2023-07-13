@@ -40,8 +40,13 @@ const ChildrenTable = () => {
       .then((res) => {
         console.log(res.data.data);
         const arr = [...res.data.data].map((obj, i) => {
-          return { ...obj, id: i + 1 };
+          let tempType = "";
+          if(obj.type === "childstudy") tempType = "Child Study";
+          else if(obj.type === "childmedical" || obj.type === "childhealth") tempType = "Child Health";
+          else if(obj.type === "freelegal") tempType = "Free Legal";
+          return { ...obj, id: i + 1,category: tempType};
         });
+        console.log(arr)
         setRows(arr);
       }).catch((err) => console.log(err));
   };
@@ -49,7 +54,7 @@ const ChildrenTable = () => {
   const columns = [
     { field: "id", headerName: "S.No", width: 70 },
     { field: "name", headerName: "Child Name", width: 150 },
-    { field: "type", headerName: "Category", width: 130 },
+    { field: "category", headerName: "Category", width: 130 },
     {
       field: "age",
       headerName: "Age",

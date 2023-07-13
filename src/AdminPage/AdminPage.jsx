@@ -12,7 +12,7 @@ import AddChild from "../pages/ChildrenList/AddChild/AddChild";
 import AddDonator from "../pages/DonatorsList/AddDonator/AddDonator";
 
 const AdminPage = () => {
-  const { pageName,childId } = useParams();
+  const { pageName,childId,donatorId } = useParams();
 
   return (
     <div>
@@ -26,9 +26,10 @@ const AdminPage = () => {
           {pageName === "childrenList" && <ChildrenList />}
           {pageName === "donatorsList" && <DonatorsList />}
           {pageName === "paymentDetails" && <PaymentDetails />}
-          {pageName === "childrenListAdd" && <AddChild add="true" />}
-          {pageName === "childrenListUpdate" && <AddChild add="false" childId={childId} />}
-          {pageName === "donatorsListAdd" && <AddDonator />}
+          {pageName === "childrenListAdd" && <AddChild add={true} />}
+          {pageName === "childrenListUpdate" && <AddChild add={false} childId={childId} />}
+          {pageName === "donatorsListAdd" && <AddDonator add={true} />}
+          {pageName === "donatorsListUpdate" && <AddDonator add={false} donatorId={donatorId} />}
         </div>
       </div>
     </div>

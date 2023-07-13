@@ -152,7 +152,6 @@ const ContactUsHome = () => {
                       aria-label="name"
                       id="name"
                       value={contactInfo.name}
-                      pattern="/^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/"
                       required
                       onChange={(e) =>
                         setContactInfo({ ...contactInfo, name: e.target.value })

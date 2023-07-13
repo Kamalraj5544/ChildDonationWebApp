@@ -7,13 +7,14 @@ import { MdChildCare, MdOutlinePayment } from "react-icons/md";
 import { FcDonate } from "react-icons/fc";
 import { FiLogOut } from "react-icons/fi";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import "./Sidebar.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Sidebar = () => {
-  const [activeSideBar, setActiveSideBar] = useState(1);
+  const { pageName } = useParams();
+  const [activeSideBar, setActiveSideBar] = useState(null);
   return (
     <div>
       <div className="d-flex justify-content-between flex-column bg-dark text-white vh-100 pt-5">
@@ -21,7 +22,7 @@ const Sidebar = () => {
           <Link to="/admin/dashboard">
             <li
               className={
-                activeSideBar === 1
+                pageName === "dashboard"
                   ? "activetab nav-item item"
                   : "nav-item item"
               }
@@ -38,7 +39,7 @@ const Sidebar = () => {
           <Link to="/admin/childrenList">
             <li
               className={
-                activeSideBar === 2
+                pageName === "childrenList"
                   ? "activetab nav-item item"
                   : "nav-item item"
               }
@@ -58,7 +59,7 @@ const Sidebar = () => {
           <Link to="/admin/donatorsList">
             <li
               className={
-                activeSideBar === 3
+                pageName === "donatorsList"
                   ? "activetab nav-item item"
                   : "nav-item item"
               }
@@ -75,7 +76,7 @@ const Sidebar = () => {
           <Link to="/admin/paymentDetails">
             <li
               className={
-                activeSideBar === 4
+                pageName === "paymentDetails"
                   ? "activetab nav-item item"
                   : "nav-item item"
               }
@@ -90,14 +91,7 @@ const Sidebar = () => {
             </li>
           </Link>
           <Link to="/">
-            <li
-              className={
-                activeSideBar === 5
-                  ? "activetab nav-item item"
-                  : "nav-item item"
-              }
-              onClick={() => setActiveSideBar(5)}
-            >
+            <li className="nav-item item">
               <span className="me-3">
                 <FiLogOut />
               </span>

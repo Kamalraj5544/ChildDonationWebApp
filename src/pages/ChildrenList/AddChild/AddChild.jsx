@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { apiBaseUrl } from "../../../BaseUrl";
 
@@ -10,10 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
 
-import { useNavigate } from "react-router-dom";
-
 const AddChild = ({ add, childId }) => {
-  const navigate = useNavigate();
   useEffect(() => {
     childId !== undefined &&
       axios
@@ -73,8 +69,6 @@ const AddChild = ({ add, childId }) => {
       type: "",
       imageUrl: "",
     });
-
-    // navigate("/admin/childrenList");
   };
 
   const handleUpdateChildData = async (id) => {
@@ -93,13 +87,25 @@ const AddChild = ({ add, childId }) => {
             });
       });
 
-    navigate("/admin/childrenList");
+    setChildDetails({
+      name: "",
+      addBy: {
+        _id: "64a6b4f9ce2e1705901eed29",
+        name: "neethimaan",
+        number: 1234567890,
+        emailId: "admin@neethimaan.com",
+      },
+      age: "",
+      description: "",
+      type: "",
+      imageUrl: "",
+    });
   };
 
   return (
     <div className="d-flex container flex-column border rounded p-4">
       <h4 className="text-danger fw-bold">
-        {add === "true" ? "Add Children Details" : "Update Children details"}
+        {add ? "Add Children Details" : "Update Children details"}
       </h4>
       <hr />
 
@@ -108,9 +114,7 @@ const AddChild = ({ add, childId }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          add === "true"
-            ? handlePostChildData()
-            : handleUpdateChildData(childId);
+          add ? handlePostChildData() : handleUpdateChildData(childId);
         }}
       >
         <div className="py-3 row1">
@@ -237,7 +241,7 @@ const AddChild = ({ add, childId }) => {
             Cancel
           </button>
           <button className="btn btn-danger" type="submit">
-            {add === "true" ? "Add" : "Update"}
+            {add ? "Add" : "Update"}
           </button>
         </div>
       </form>

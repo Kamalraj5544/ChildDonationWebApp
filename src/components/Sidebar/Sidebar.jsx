@@ -39,7 +39,9 @@ const Sidebar = () => {
           <Link to="/admin/childrenList">
             <li
               className={
-                pageName === "childrenList"
+                pageName === "childrenList" ||
+                pageName === "childrenListAdd" ||
+                pageName === "childrenListUpdate"
                   ? "activetab nav-item item"
                   : "nav-item item"
               }
@@ -59,7 +61,9 @@ const Sidebar = () => {
           <Link to="/admin/donatorsList">
             <li
               className={
-                pageName === "donatorsList"
+                pageName === "donatorsList" ||
+                pageName === "donatorsListAdd" ||
+                pageName === "donatorsListUpdate"
                   ? "activetab nav-item item"
                   : "nav-item item"
               }

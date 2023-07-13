@@ -177,7 +177,7 @@ const DonatorsTable = () => {
           return { ...obj, id: i + 1 };
         });
         setRows(arr);
-      });
+      }).catch((err) => console.log(err));
   };
 
   return (

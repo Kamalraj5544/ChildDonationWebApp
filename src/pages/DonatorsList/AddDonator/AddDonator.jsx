@@ -73,9 +73,9 @@ const AddDonator = ({ add, donatorId }) => {
       company: "",
       paymentType: "",
       description: "",
-      imageUrl: "dfdfsd",
+      imageUrl: "",
     });
-    setShow(false)
+    setShow(false);
   };
 
   const handleConvertImageUrl = async (e) => {
@@ -104,6 +104,7 @@ const AddDonator = ({ add, donatorId }) => {
         )
         .then((res) => {
           console.log(res);
+          setShow(true);
           setDonatorDetails({
             name: res.data.data.name,
             lastName: res.data.data.lastName,
@@ -111,7 +112,7 @@ const AddDonator = ({ add, donatorId }) => {
             role: res.data.data.role,
             company: res.data.data.company,
             description: res.data.data.description,
-            imageUrl: "dfdfsd",
+            imageUrl: res.data.data.imageUrl,
             paymentType: res.data.data.paymentType,
           });
         });

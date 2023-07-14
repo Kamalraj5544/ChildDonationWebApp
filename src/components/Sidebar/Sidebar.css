@@ -20,3 +20,7 @@
 .activetab {
   background-color: rgb(245, 69, 69) !important;
 }
+
+.navbar-toggler-icon {
+ color: white !important;
+}

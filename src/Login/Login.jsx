@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { apiBaseUrl } from "../BaseUrl";
 
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -16,16 +18,36 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import { PiSignInBold } from "react-icons/pi";
 import { MdAdminPanelSettings } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Login.css";
+import axios from "axios";
 const Login = () => {
-  const [showPassword, setShowPassword] = React.useState(false);
+  const navigate = useNavigate();
+  const [loginCred, setLoginCred] = useState({});
+  const [error, setError] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
+  };
+
+  const handleLogin = async (e) => {
+    await axios
+      .post(`${apiBaseUrl}/neethimaan/adminLogIn`, loginCred)
+      .then((res) => {
+        console.log(res);
+        if (res.data.statusCode === 200) {
+          localStorage.setItem("isLoggedIn", true);
+          navigate("/admin/dashboard");
+        }
+        else{
+          setError(res.data.message)
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -45,8 +67,11 @@ const Login = () => {
               <AccountCircle sx={{ color: "red", mr: 1, my: 0.5 }} />
               <TextField
                 id="input-with-sx"
-                label="Username"
+                label="Email Id"
                 variant="standard"
+                onChange={(e) =>
+                  setLoginCred({ ...loginCred, emailId: e.target.value })
+                }
               />
             </Box>
           </div>
@@ -58,6 +83,9 @@ const Login = () => {
               <Input
                 id="standard-adornment-password"
                 type={showPassword ? "text" : "password"}
+                onChange={(e) =>
+                  setLoginCred({ ...loginCred, password: e.target.value })
+                }
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -66,7 +94,7 @@ const Login = () => {
                       onMouseDown={handleMouseDownPassword}
                       style={{ color: "red" }}
                     >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -78,9 +106,17 @@ const Login = () => {
               Forget password?
             </Link>
           </div>
-          <Link to="/admin/dashboard" type="button" class="btn btn-danger fw-bold">
+
+          {
+            error && <p className="text-danger p-1">{error}</p>
+          }
+          <button
+            type="button"
+            class="btn btn-danger fw-bold"
+            onClick={handleLogin}
+          >
             Sign In <PiSignInBold />
-          </Link>
+          </button>
         </section>
       </div>
     </div>

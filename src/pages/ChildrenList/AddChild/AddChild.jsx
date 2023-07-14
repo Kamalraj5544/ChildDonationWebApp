@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { apiBaseUrl } from "../../../BaseUrl";
 
@@ -22,9 +22,13 @@ const AddChild = ({ add, childId }) => {
             description: res.data.data.description,
             type: res.data.data.type,
             age: res.data.data.age,
+            imageUrl: res.data.data.imageUrl,
           });
+          setShow(true);
         });
   }, []);
+
+  const [show, setShow] = useState(false);
 
   const [childDetails, setChildDetails] = useState({
     name: "",
@@ -55,20 +59,7 @@ const AddChild = ({ add, childId }) => {
               position: toast.POSITION.TOP_RIGHT,
             });
       });
-
-    setChildDetails({
-      name: "",
-      addBy: {
-        _id: "64a6b4f9ce2e1705901eed29",
-        name: "neethimaan",
-        number: 1234567890,
-        emailId: "admin@neethimaan.com",
-      },
-      age: "",
-      description: "",
-      type: "",
-      imageUrl: "",
-    });
+    setShow(false);
   };
 
   const handleUpdateChildData = async (id) => {
@@ -86,7 +77,6 @@ const AddChild = ({ add, childId }) => {
               position: toast.POSITION.TOP_RIGHT,
             });
       });
-
     setChildDetails({
       name: "",
       addBy: {
@@ -100,7 +90,28 @@ const AddChild = ({ add, childId }) => {
       type: "",
       imageUrl: "",
     });
+    setShow(false);
   };
+
+  const handleConvertImageUrl = async (e) => {
+    const imageFile = e.target.files[0];
+    const imageName = e.target.files[0].name;
+
+    const formData = new FormData();
+    formData.append("file", imageFile);
+    formData.append("fileName", imageName);
+
+    await axios
+      .post(`${apiBaseUrl}/neethimaan/upload`, formData)
+      .then((response) => {
+        console.log(response.data.data);
+        setChildDetails({ ...childDetails, imageUrl: response.data.data });
+        setShow(true);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const formRef = useRef(null);
 
   return (
     <div className="d-flex container flex-column border rounded p-4">
@@ -115,7 +126,9 @@ const AddChild = ({ add, childId }) => {
         onSubmit={(e) => {
           e.preventDefault();
           add ? handlePostChildData() : handleUpdateChildData(childId);
+          formRef.current.reset();
         }}
+        ref={formRef}
       >
         <div className="py-3 row1">
           <div className="row">
@@ -149,6 +162,9 @@ const AddChild = ({ add, childId }) => {
                 placeholder="Enter your Last name"
                 aria-label="Last name"
                 id="LastName"
+                onChange={(e) =>
+                  (childDetails.name = childDetails.name + e.target.value)
+                }
               />
             </div>
           </div>
@@ -202,21 +218,21 @@ const AddChild = ({ add, childId }) => {
           <label for="imgUpload" className="fw-bold pb-2 d-block">
             Image Upload
           </label>
-          <button
-            id="imgUpload"
-            className="btn border bg-dark text-white fw-bold d-flex flex-row"
-          >
-            <span className="mt-2 me-2">
-              <FiUpload />
-            </span>
-            <input
-              className="form-control"
-              type="file"
-              onChange={(e) =>
-                setChildDetails({ ...childDetails, imageUrl: e.target.value })
-              }
-            />
-          </button>
+          <input
+            id="file-input"
+            className="form-control"
+            type="file"
+            onChange={(e) => handleConvertImageUrl(e)}
+          />
+          {show && (
+            <div className="w-50 h-50 m-4">
+              <img
+                src={childDetails.imageUrl}
+                alt="childPhoto"
+                className="card w-25 h-25"
+              />
+            </div>
+          )}
         </div>
 
         <div className="row4 pb-3">

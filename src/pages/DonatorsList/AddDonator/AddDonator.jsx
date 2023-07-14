@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
 const AddDonator = ({ add, donatorId }) => {
+  const [show, setShow] = useState(false);
   const [donatorDetails, setDonatorDetails] = useState({
     name: "",
     lastName: "",
@@ -25,7 +26,7 @@ const AddDonator = ({ add, donatorId }) => {
     await axios
       .post(`${apiBaseUrl}/neethimaan/createDonatorList`, donatorDetails)
       .then((res) => {
-        console.log(res)
+        console.log(res);
         res.status === 200
           ? toast.success("Successfully added!", {
               position: toast.POSITION.TOP_RIGHT,
@@ -45,6 +46,7 @@ const AddDonator = ({ add, donatorId }) => {
       description: "",
       imageUrl: "dfdfsd",
     });
+    setShow(false);
   };
 
   const handleUpdateDonatorData = async (id) => {
@@ -73,10 +75,28 @@ const AddDonator = ({ add, donatorId }) => {
       description: "",
       imageUrl: "dfdfsd",
     });
+    setShow(false)
+  };
+
+  const handleConvertImageUrl = async (e) => {
+    const imageFile = e.target.files[0];
+    const imageName = e.target.files[0].name;
+
+    const formData = new FormData();
+    formData.append("file", imageFile);
+    formData.append("fileName", imageName);
+
+    await axios
+      .post(`${apiBaseUrl}/neethimaan/upload`, formData)
+      .then((response) => {
+        console.log(response.data.data);
+        setDonatorDetails({ ...donatorDetails, imageUrl: response.data.data });
+        setShow(true);
+      })
+      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    console.log(donatorId)
     donatorId !== undefined &&
       axios
         .get(
@@ -154,7 +174,7 @@ const AddDonator = ({ add, donatorId }) => {
           </div>
         </div>
 
-        <div className="pb-4 row2">
+        <div className=" row2">
           <div className="row">
             <div className="col">
               <label for="amount" className="fw-bold pb-2">
@@ -181,24 +201,20 @@ const AddDonator = ({ add, donatorId }) => {
                 Image Upload
               </label>
               <input
-                className="form-control mb-3"
+                id="file-input"
+                className="form-control"
                 type="file"
-                onChange={(e) =>
-                  setDonatorDetails({
-                    ...donatorDetails,
-                    imageUrl: e.target.value,
-                  })
-                }
+                onChange={(e) => handleConvertImageUrl(e)}
               />
-              <button
-                id="imgUpload"
-                className="btn border bg-dark text-white fw-bold"
-              >
-                <span className="me-3">
-                  <FiUpload />
-                </span>
-                <span>Upload</span>
-              </button>
+              {show && (
+                <div className="m-4">
+                  <img
+                    src={donatorDetails.imageUrl}
+                    alt="childPhoto"
+                    className="card w-25 h-25"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>

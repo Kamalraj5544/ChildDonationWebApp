@@ -53,6 +53,7 @@ const DonatorsTable = () => {
   const columns = [
     { field: "id", headerName: "S.No", width: 70 },
     { field: "name", headerName: "Name", width: 70 },
+    { field: "lastName", headerName: "Last name", width: 150 },
     {
       field: "amount",
       headerName: "Amount",

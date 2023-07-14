@@ -53,7 +53,8 @@ const ChildrenTable = () => {
 
   const columns = [
     { field: "id", headerName: "S.No", width: 70 },
-    { field: "name", headerName: "Child Name", width: 150 },
+    { field: "name", headerName: "Child name", width: 150 },
+
     { field: "category", headerName: "Category", width: 130 },
     {
       field: "age",

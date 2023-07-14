@@ -27,7 +27,6 @@ const columns = [
 
   { field: "role", headerName: "Role", width: 130 },
   { field: "company", headerName: "Company", width: 130 },
-  { field: "company", headerName: "Company", width: 130 },
   { field: "description", headerName: "description", width: 130 },
   { field: "paymentId", headerName: "Payment ID", width: 130 },
 ];

@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+
+import displayRazorpay from "../../utils/PaymentGateway";
 
 import Checkbox from "@mui/material/Checkbox";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const DonateFormSection = () => {
+ 
+  const [disableInput, setDisableInput] = useState(false);
+  const [amount, setAmount] = useState();
+
+  const handleAmountClick = (amt) => {
+    setAmount(amt);
+    setDisableInput(true);
+  };
+
+  const handleCustomAmount = () => {
+    setAmount("");
+    setDisableInput(false);
+  };
+
+
+
   return (
     <>
-      <section className="w-100 container">
+      <section className="w-100 container mb-5">
         <h1 className="fw-bolder mb-2">Donation Amount</h1>
         <div
           className="row m-0 p-0 g-2 mb-4"
@@ -15,38 +33,43 @@ const DonateFormSection = () => {
           aria-label="Basic example"
         >
           <div className="col">
-            <button type="button" className="btn btn-danger fw-bolder w-100">
+            <button
+              type="button"
+              className="btn btn-danger fw-bolder w-100"
+              onClick={() => handleAmountClick("100")}
+            >
               <span>&#8377;</span> 100
             </button>
           </div>
           <div className="col">
-            <button type="button" className="btn btn-danger fw-bolder w-100">
+            <button
+              type="button"
+              className="btn btn-danger fw-bolder w-100"
+              onClick={() => handleAmountClick("300")}
+            >
               <span>&#8377;</span> 300
             </button>
           </div>
           <div className="col">
-            <button type="button" className="btn btn-danger fw-bolder w-100">
+            <button
+              type="button"
+              className="btn btn-danger fw-bolder w-100"
+              onClick={() => handleAmountClick("500")}
+            >
               <span>&#8377;</span> 500
             </button>
           </div>
           <div className="col-6">
-            <button type="button" className="btn btn-danger w-100">
+            <button
+              type="button"
+              className="btn btn-danger w-100"
+              onClick={handleCustomAmount}
+            >
               <span>&#8377;</span> Custom Amount
             </button>
           </div>
         </div>
-
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Other Amount"
-          aria-label="name"
-          id="amount"
-        />
       </section>
-
-      <br />
-      <br />
 
       <section className="container">
         <h3 className="fw-bolder">Personal Information</h3>
@@ -145,7 +168,12 @@ const DonateFormSection = () => {
         </div>
 
         <div className="py-3 row1">
-          <button className="btn btn-danger fw-bolder" type="button">
+          <button
+            className="btn btn-danger fw-bolder"
+            type="button"
+            id="rzp-button1"
+            onClick={displayRazorpay}
+          >
             Proceed to Pay
           </button>
         </div>

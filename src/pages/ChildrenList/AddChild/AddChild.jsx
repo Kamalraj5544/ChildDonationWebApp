@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { apiBaseUrl } from "../../../BaseUrl";
-
-import { FiUpload } from "react-icons/fi";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -41,7 +39,8 @@ const AddChild = ({ add, childId }) => {
     age: "",
     description: "",
     type: "",
-    imageUrl: "",
+    imageUrl:
+      "https://quantzi-demo.s3.ap-northeast-1.amazonaws.com/undefinedlogo",
   });
 
   const handlePostChildData = async () => {
@@ -60,6 +59,20 @@ const AddChild = ({ add, childId }) => {
             });
       });
     setShow(false);
+    setChildDetails({
+      name: "",
+      addBy: {
+        _id: "64a6b4f9ce2e1705901eed29",
+        name: "neethimaan",
+        number: 1234567890,
+        emailId: "admin@neethimaan.com",
+      },
+      age: "",
+      description: "",
+      type: "",
+      imageUrl:
+        "https://quantzi-demo.s3.ap-northeast-1.amazonaws.com/undefinedlogo",
+    });
   };
 
   const handleUpdateChildData = async (id) => {
@@ -88,7 +101,8 @@ const AddChild = ({ add, childId }) => {
       age: "",
       description: "",
       type: "",
-      imageUrl: "",
+      imageUrl:
+        "https://quantzi-demo.s3.ap-northeast-1.amazonaws.com/undefinedlogo",
     });
     setShow(false);
   };
@@ -111,8 +125,6 @@ const AddChild = ({ add, childId }) => {
       .catch((error) => console.log(error));
   };
 
-  const formRef = useRef(null);
-
   return (
     <div className="d-flex container flex-column border rounded p-4">
       <h4 className="text-danger fw-bold">
@@ -126,9 +138,7 @@ const AddChild = ({ add, childId }) => {
         onSubmit={(e) => {
           e.preventDefault();
           add ? handlePostChildData() : handleUpdateChildData(childId);
-          formRef.current.reset();
         }}
-        ref={formRef}
       >
         <div className="py-3 row1">
           <div className="row">
@@ -206,9 +216,9 @@ const AddChild = ({ add, childId }) => {
                 }
               >
                 <option selected={childDetails.type}>Select </option>
-                <option value="childstudy">Child Study</option>
-                <option value="childhealth">Child Health</option>
-                <option value="freelegal">Free Legal</option>
+                <option value="childStudy">Child Study</option>
+                <option value="childHealth">Child Health</option>
+                <option value="freeLegal">Free Legal</option>
               </select>
             </div>
           </div>

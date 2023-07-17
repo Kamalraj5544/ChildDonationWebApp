@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { apiBaseUrl } from "../../../BaseUrl";
 
-import { FiUpload } from "react-icons/fi";
-
 import { ToastContainer, toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
@@ -19,7 +18,7 @@ const AddDonator = ({ add, donatorId }) => {
     company: "",
     paymentType: "",
     description: "",
-    imageUrl: "dfdfsd",
+    imageUrl: "https://quantzi-demo.s3.ap-northeast-1.amazonaws.com/undefinedlogo",
   });
 
   const handlePostDonatorData = async () => {
@@ -44,7 +43,7 @@ const AddDonator = ({ add, donatorId }) => {
       company: "",
       paymentType: "",
       description: "",
-      imageUrl: "dfdfsd",
+      imageUrl: "https://quantzi-demo.s3.ap-northeast-1.amazonaws.com/undefinedlogo",
     });
     setShow(false);
   };
@@ -73,7 +72,7 @@ const AddDonator = ({ add, donatorId }) => {
       company: "",
       paymentType: "",
       description: "",
-      imageUrl: "",
+      imageUrl: "https://quantzi-demo.s3.ap-northeast-1.amazonaws.com/undefinedlogo",
     });
     setShow(false);
   };
@@ -276,7 +275,6 @@ const AddDonator = ({ add, donatorId }) => {
                 value={donatorDetails.name}
                 aria-label="Default select example"
                 required
-                defaultValue={donatorDetails.paymentType}
                 onChange={(e) =>
                   setDonatorDetails({
                     ...donatorDetails,
@@ -288,7 +286,6 @@ const AddDonator = ({ add, donatorId }) => {
                   Select payment type{" "}
                 </option>
                 <option value="razorpay">Razor pay</option>
-                <option value="Card">Card</option>
                 <option value="inhand">Cash</option>
               </select>
             </div>

@@ -11,14 +11,13 @@ const DonatorUpdate = () => {
   useEffect(() => {
     localStorage.getItem("isLoggedIn") !== "true" && navigate("/login");
   }, []);
+
   return (
-    <div>
-      <div className="d-flex">
-        <Sidebar />
-        <div className="col">
-          <NavBar />
-          <AddDonator add={false} donatorId={donatorId} />
-        </div>
+    <div className="d-flex flex-column flex-md-row vh-100 w-100">
+      <Sidebar />
+      <div className="col">
+        <NavBar />
+        <AddDonator add={false} donatorId={donatorId} />
       </div>
     </div>
   );

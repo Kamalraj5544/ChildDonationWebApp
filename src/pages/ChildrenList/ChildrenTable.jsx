@@ -41,9 +41,9 @@ const ChildrenTable = () => {
         console.log(res.data.data);
         const arr = [...res.data.data].map((obj, i) => {
           let tempType = "";
-          if(obj.type === "childstudy") tempType = "Child Study";
-          else if(obj.type === "childmedical" || obj.type === "childhealth") tempType = "Child Health";
-          else if(obj.type === "freelegal") tempType = "Free Legal";
+          if(obj.type === "childStudy") tempType = "Child Study";
+          else if(obj.type === "childMedical" || obj.type === "childHealth") tempType = "Child Health";
+          else if(obj.type === "freeLegal") tempType = "Free Legal";
           return { ...obj, id: i + 1,category: tempType};
         });
         console.log(arr)

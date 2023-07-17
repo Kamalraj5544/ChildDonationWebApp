@@ -3,7 +3,7 @@ import React from "react";
 import cCardImage from "../../assets/medium-shot-happy-kids-posing 1.jpg";
 import { Link } from "react-router-dom";
 
-const ChildCard = () => {
+const ChildCard = ({childObj}) => {
   return (
     <div className="card border-0 bg-body-secondary mw-100">
       <img src={cCardImage} className="card-img-top" alt="childImage" />

@@ -1,0 +1,19 @@
+.owl-prev{
+    background-color: red !important;
+    width: 2rem;
+    height: 2rem;
+}
+
+.owl-next > span {
+    font-size: larger;
+}
+.owl-prev > span {
+    font-size: larger;
+}
+
+.owl-next{
+    background-color: red !important;
+    width: 2rem;
+    height: 2rem;
+}
+

@@ -1,25 +1,30 @@
 import React from "react";
 
-import cCardImage from "../../assets/medium-shot-happy-kids-posing 1.jpg";
+import "./ChildCard.css"
+
+import cCardImage from "../../assets/user-icon-person-symbol-human-avatar-3d-render 1.jpg";
 import { Link } from "react-router-dom";
 
-const ChildCard = ({childObj}) => {
+const ChildCard = ({ childObj }) => {
   return (
-    <div className="card border-0 bg-body-secondary mw-100">
-      <img src={cCardImage} className="card-img-top" alt="childImage" />
+    <div className="card border-0 bg-body-secondary">
+      <img
+        src={childObj.imageUrl !== undefined ? childObj.imageUrl : cCardImage}
+        className="card-img-top card-image"
+        alt="childImage"
+      />
       <div className="card-body">
-        <h5 className="card-title fw-bolder fs-3">Frank Stephan</h5>
+        <h5 className="card-title fw-bolder fs-3">{childObj.name}</h5>
         <p className="card-text ">
           <strong>Age:</strong>
-          <span>15</span>
+          <span>{childObj.age}</span>
         </p>
-        <p className="card-text">
-          Lorem ipsum dolor sit amet consectetur.Ullamcorper phasellus accumsan
-          tristique nibh orci pharetra elit felis.
-        </p>
+        <p className="card-text">{childObj.description}</p>
       </div>
       <div className="card-body d-flex justify-content-center align-items-center">
-        <Link to="/donateInfo" className="btn btn-danger fw-bolder">Donate Now</Link>
+        <Link to={`/donateInfo/${childObj._id}`} className="btn btn-danger fw-bolder">
+          Donate Now
+        </Link>
         <button className="btn border text-primary ms-3 bg-white">
           <i class="bi bi-share"></i>
         </button>

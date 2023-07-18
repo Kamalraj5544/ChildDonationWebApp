@@ -6,25 +6,13 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
-
 import DonatorCard from "../../components/DonatorCard/DonatorCard";
 
-import "./DonatorSlider.css"
+import "./DonatorSlider.css";
 
 import axios from "axios";
 
 const DonatorSlider = () => {
-  const resObj = {
-    0:{
-      items:1,
-    },
-    370:{
-      items:2
-    },
-    550: {
-      items:3
-    },
-  };
   const [donatorsArray, setDonatorsArray] = useState([]);
 
   useEffect(() => {
@@ -42,6 +30,21 @@ const DonatorSlider = () => {
         setDonatorsArray(arr);
       })
       .catch((err) => console.log(err));
+  };
+
+  const resObj = {
+    0: {
+      items: 1,
+    },
+    370: {
+      items: 2,
+    },
+    550: {
+      items: 3,
+    },
+    978: {
+      items: 4,
+    },
   };
 
   return (
@@ -63,7 +66,6 @@ const DonatorSlider = () => {
             className="owl-theme"
             responsive={resObj}
             nav
-            loop
             dots={false}
             autoplay
             autoplaySpeed={2000}

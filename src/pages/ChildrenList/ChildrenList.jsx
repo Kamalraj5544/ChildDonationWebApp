@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const ChildrenList = () => {
   return (
     <div className="container d-flex flex-column">
-      <div className="d-flex justify-content-between align-items-center">
+      <div className="d-flex justify-content-between align-items-center mb-3">
         <span className="text-danger fw-bold">Children List</span>
         <Link className="border text-black" to="/admin/childrenListAdd">
           <Button

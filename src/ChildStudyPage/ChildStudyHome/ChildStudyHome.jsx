@@ -15,11 +15,11 @@ import Needers from "../Needers/Needers";
 import Donators from "../Donators/Donators";
 
 const ChildStudyHome = () => {
+  const [children, setChildren] = useState(true);
   useEffect(() => {
     AOS.init();
     window.scroll(0, 0);
   }, []);
-  const [children, setChildren] = useState(true);
   return (
     <div className="childStudy-wrapper">
       <header>
@@ -93,7 +93,7 @@ const ChildStudyHome = () => {
           aria-labelledby="pills-home-tab"
           tabindex="0"
         >
-          <Needers />
+          <Needers children={children} />
         </div>
         <div
           className="tab-pane fade"
@@ -102,7 +102,7 @@ const ChildStudyHome = () => {
           aria-labelledby="pills-profile-tab"
           tabindex="0"
         >
-          <Donators />
+          <Donators children={children} />
         </div>
       </div>
 

@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const AddChild = ({ add, childId }) => {
   useEffect(() => {
@@ -263,9 +264,9 @@ const AddChild = ({ add, childId }) => {
         </div>
 
         <div className="row5">
-          <button className="btn btn-outline-danger me-3" type="button">
+          <Link to="/admin/childrenList" className="btn btn-outline-danger me-3" type="button" >
             Cancel
-          </button>
+          </Link>
           <button className="btn btn-danger" type="submit">
             {add ? "Add" : "Update"}
           </button>

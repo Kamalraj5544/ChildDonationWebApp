@@ -21,7 +21,7 @@ const MainRouting = () => {
         <Route path='/services' element={<ChildStudyHome /> } />
         <Route path='/contactUs' element={<ContactUsHome /> } />
         <Route path='/login' element={<Login />} />
-        <Route path='/donateInfo' element={<DonateChildHome />} />
+        <Route path='/donateInfo/:childId' element={<DonateChildHome />} />
         <Route path='/admin/:pageName' element={<AdminPage />} />
         <Route path='/admin/:pageName/:childId' element={<AdminPage />} />
         <Route path='/admin/donatorsListUpdate/:donatorId' element={<DonatorUpdate />} />

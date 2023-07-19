@@ -9,29 +9,27 @@ import axios from "axios";
 
 const columns = [
   { field: "id", headerName: "S.No", width: 70 },
-  { field: "name", headerName: "First name", width: 130 },
-  { field: "lastName", headerName: "Last name", width: 130 },
+  { field: "name", headerName: "Name", width: 70 },
   {
-    field: "amount",
-    headerName: "Amount",
+    field: "number",
+    headerName: "Number",
     type: "number",
-    width: 90,
+    width: 150,
   },
   {
     field: "date",
-    headerName: "Payment Date",
+    headerName: "Date",
     description: "This column has a value getter and is not sortable.",
     sortable: false,
     width: 120,
   },
 
-  { field: "role", headerName: "Role", width: 130 },
-  { field: "company", headerName: "Company", width: 130 },
+  { field: "emailId", headerName: "Email Id", width: 230 },
+  { field: "subject", headerName: "Subject", width: 190 },
   { field: "description", headerName: "description", width: 130 },
-  { field: "razorpay_payment_id", headerName: "Payment ID", width: 190 },
 ];
 
-const PaymentTable = () => {
+const ContactUsTable = () => {
   const [rows, setRows] = useState({});
 
   useEffect(() => {
@@ -41,13 +39,13 @@ const PaymentTable = () => {
   const getColumns = async function () {
     await axios
       .get(
-        `${apiBaseUrl}/neethimaan/findDonatorListDetails?paymentType=razorpay`
+        `${apiBaseUrl}/neethimaan/findContactUsDetails?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjRhNmI0ZjljZTJlMTcwNTkwMWVlZDI5IiwiaWF0IjoxNjg4NjQ3MDYzfQ.kfwPj9B43M7MIGfxCtdJY5R7UjmW0aF0Jq5Qs3aBKfI`
       )
       .then((res) => {
         console.log(res.data.data);
         const arr = [...res.data.data].map((obj, i) => {
           let tempdate = Moment(obj.createdAt).format("DD-MM-YYYY");
-          return { ...obj, id: i + 1, date: tempdate ,...obj.paymentInfo };
+          return { ...obj, id: i + 1, date: tempdate };
         });
         setRows(arr);
       })
@@ -70,4 +68,4 @@ const PaymentTable = () => {
   );
 };
 
-export default PaymentTable;
+export default ContactUsTable;

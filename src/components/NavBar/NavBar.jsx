@@ -19,7 +19,12 @@ const NavBar = () => {
             aria-label="Search"
           />
         </form>
-        <div className="userImg"></div>
+        <div className="userImg pe-2 pb-2">
+          <i
+            class="bi bi-person-circle"
+            style={{ fontSize: "2rem", color: "white" }}
+          ></i>
+        </div>
       </div>
     </nav>
   );

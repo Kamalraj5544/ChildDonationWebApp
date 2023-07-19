@@ -1,7 +1,5 @@
 import React from "react";
 
-import { useState } from "react";
-
 import { BiSolidDashboard } from "react-icons/bi";
 import { MdChildCare, MdOutlinePayment } from "react-icons/md";
 import { FcDonate } from "react-icons/fc";
@@ -18,9 +16,8 @@ const Sidebar = () => {
   const { pageName } = useParams();
 
   const navigate = useNavigate();
-  const [activeSideBar, setActiveSideBar] = useState(null);
   return (
-    <nav className="navbar navbar-expand-md flex-column flex-md-row bg-dark text-white h-100 py-2">
+    <nav className="navbar navbar-expand-md flex-column flex-md-row bg-dark text-white h-100">
       <div className="container-fluid">
         <button
           className="navbar-toggler bg-white"
@@ -33,9 +30,11 @@ const Sidebar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul className="p-0">
+            <Link to="/">
+              <img className="navbar-brand ms-5 pb-3" src={neethiLogo} alt="logo" />
+            </Link>
             <Link to="/admin/dashboard">
               <li
                 className={
@@ -43,7 +42,6 @@ const Sidebar = () => {
                     ? "activetab nav-item item"
                     : "nav-item item"
                 }
-                onClick={() => setActiveSideBar(1)}
               >
                 <span className="me-3">
                   <BiSolidDashboard />
@@ -62,10 +60,6 @@ const Sidebar = () => {
                     ? "activetab nav-item item"
                     : "nav-item item"
                 }
-                onClick={() => {
-                  console.log(activeSideBar);
-                  setActiveSideBar(2);
-                }}
               >
                 <span className="me-3">
                   <MdChildCare />
@@ -84,7 +78,6 @@ const Sidebar = () => {
                     ? "activetab nav-item item"
                     : "nav-item item"
                 }
-                onClick={() => setActiveSideBar(3)}
               >
                 <span className="me-3">
                   <FcDonate />
@@ -101,13 +94,28 @@ const Sidebar = () => {
                     ? "activetab nav-item item"
                     : "nav-item item"
                 }
-                onClick={() => setActiveSideBar(4)}
               >
                 <span className="me-3">
                   <MdOutlinePayment />
                 </span>
                 <span>
                   <strong>Payment</strong>
+                </span>
+              </li>
+            </Link>
+            <Link to="/admin/contactUsList">
+              <li
+                className={
+                  pageName === "contactUsList"
+                    ? "activetab nav-item item"
+                    : "nav-item item"
+                }
+              >
+                <span className="me-3">
+                  <i class="bi bi-person-lines-fill"></i>
+                </span>
+                <span>
+                  <strong>Contact List</strong>
                 </span>
               </li>
             </Link>

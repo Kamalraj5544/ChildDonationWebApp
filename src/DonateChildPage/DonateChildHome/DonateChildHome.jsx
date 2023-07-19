@@ -38,7 +38,6 @@ const DonateChildHome = () => {
       `${apiBaseUrl}/neethimaan/findOneChildrenListDetails?_id=${childId}`
     );
     console.log(response);
-
     setChildObj(response.data.data)
   };
 

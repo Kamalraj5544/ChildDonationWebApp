@@ -10,6 +10,7 @@ import DonatorsList from "../pages/DonatorsList/DonatorsList";
 import PaymentDetails from "../pages/PaymentDetails/PaymentDetails";
 import AddChild from "../pages/ChildrenList/AddChild/AddChild";
 import AddDonator from "../pages/DonatorsList/AddDonator/AddDonator";
+import ContactUsList from "../pages/ContactUsList/ContactUsList";
 
 const AdminPage = () => {
 
@@ -30,6 +31,7 @@ const AdminPage = () => {
         {pageName === "childrenList" && <ChildrenList />}
         {pageName === "donatorsList" && <DonatorsList />}
         {pageName === "paymentDetails" && <PaymentDetails />}
+        {pageName === "contactUsList" && <ContactUsList />}
         {pageName === "childrenListAdd" && <AddChild add={true} />}
         {pageName === "childrenListUpdate" && (
           <AddChild add={false} childId={childId} />

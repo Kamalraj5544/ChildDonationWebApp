@@ -63,7 +63,7 @@ const ChildStudyHome = () => {
               role="tab"
               aria-controls="pills-home"
               aria-selected="true"
-              onClick={() => setChildren(false)}
+              onClick={() => setChildren(true)}
             >
               Love Who Need
             </button>
@@ -78,14 +78,14 @@ const ChildStudyHome = () => {
               role="tab"
               aria-controls="pills-profile"
               aria-selected="false"
-              onClick={() => setChildren(true)}
+              onClick={() => setChildren(false)}
             >
               Love Who Donates
             </button>
           </li>
         </div>
       </ul>
-      <div className="tab-content" id="pills-tabContent">
+      {/* <div className="tab-content" id="pills-tabContent">
         <div
           className="tab-pane fade show active"
           id="pills-home"
@@ -104,7 +104,15 @@ const ChildStudyHome = () => {
         >
           <Donators children={children} />
         </div>
-      </div>
+      </div> */}
+
+      <section className="container-fluid">
+        {children ? (
+          <Needers children={children} />
+        ) : (
+          <Donators children={children} />
+        )}
+      </section>
 
       <section className="footer-section">
         <Footer />

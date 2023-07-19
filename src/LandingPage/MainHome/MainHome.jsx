@@ -41,7 +41,7 @@ const MainHome = () => {
                   Help Carmel Save Her From Malnutrition And Illness
                 </p>
                 <Link
-                  to="/donateInfo"
+                  to="/services"
                   className="btn btn-danger text-white fs-5 fw-bold mb-4"
                 >
                   Donate Now

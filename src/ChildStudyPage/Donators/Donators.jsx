@@ -7,12 +7,12 @@ import axios from "axios";
 
 import { apiBaseUrl } from "../../BaseUrl";
 
-import Box from "@mui/material/Box";
-import LinearProgress from "@mui/material/LinearProgress";
+import MoonLoader from "react-spinners/MoonLoader";
 
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+
 
 const Donators = ({ children }) => {
   const [donatorsArray, setDonatorsArray] = useState([]);
@@ -53,8 +53,9 @@ const Donators = ({ children }) => {
   return (
     <div className="mt-5">
       <section className="container">
+        {!isLoading ? (
           <OwlCarousel
-            className="owl-theme responsiveClass"
+            className="owl-theme"
             responsive={resObj}
             nav
             loop
@@ -63,14 +64,17 @@ const Donators = ({ children }) => {
             autoplayHoverPause
             margin={20}
           >
-            {!isLoading ? (
-              donatorsArray.map((donator) => <DonatorCard donator={donator} />)
-            ) : (
-              <Box sx={{ width: "100%" }}>
-                <LinearProgress />
-              </Box>
-            )}
+            {
+              donatorsArray.map((donator) => (
+              <DonatorCard donator={donator} />
+            ))
+            }
           </OwlCarousel>
+        ) : (
+          <div className="d-flex justify-content-center align-items-center">
+            <MoonLoader color="red" />
+            </div>
+        )}
       </section>
 
       <br />
@@ -78,7 +82,7 @@ const Donators = ({ children }) => {
       <section>
         <h1
           className="fw-bolder fs-1 text-center text-danger my-5"
-          data-aos="fade-down"
+          data-aos="fade-left"
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1300"
         >

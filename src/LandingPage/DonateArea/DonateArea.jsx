@@ -22,7 +22,7 @@ const DonateArea = () => {
           accumsan tristique nibh orci pharetra elit felis. Imperdiet in ipsum
           massa aenean.
         </p>
-        <Link to="/donateInfo" className="btn btn-danger fs-5 fw-bolder">
+        <Link to="/services" className="btn btn-danger fs-5 fw-bolder">
           Donate Now
         </Link>
       </section>

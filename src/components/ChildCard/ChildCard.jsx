@@ -1,13 +1,13 @@
 import React from "react";
 
-import "./ChildCard.css"
+import "./ChildCard.css";
 
 import cCardImage from "../../assets/user-icon-person-symbol-human-avatar-3d-render 1.jpg";
 import { Link } from "react-router-dom";
 
 const ChildCard = ({ childObj }) => {
   return (
-    <div className="card border-0 bg-body-secondary">
+    <div className="card border-0 bg-body-secondary w-100 h-100">
       <img
         src={childObj.imageUrl !== undefined ? childObj.imageUrl : cCardImage}
         className="card-img-top card-image"
@@ -22,7 +22,10 @@ const ChildCard = ({ childObj }) => {
         <p className="card-text">{childObj.description}</p>
       </div>
       <div className="card-body d-flex justify-content-center align-items-center">
-        <Link to={`/donateInfo/${childObj._id}`} className="btn btn-danger fw-bolder">
+        <Link
+          to={`/donateInfo/${childObj._id}`}
+          className="btn btn-danger fw-bolder"
+        >
           Donate Now
         </Link>
         <button className="btn border text-primary ms-3 bg-white">

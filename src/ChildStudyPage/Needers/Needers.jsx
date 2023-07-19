@@ -11,8 +11,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
-import Box from "@mui/material/Box";
-import LinearProgress from "@mui/material/LinearProgress";
+import MoonLoader from "react-spinners/MoonLoader";
 
 const Needers = ({ children }) => {
   const [childrenArray, setChildrenArray] = useState([]);
@@ -48,35 +47,34 @@ const Needers = ({ children }) => {
       items: 3,
     },
   };
+
   return (
     <div className="mx-3">
-      <section className="container mt-5 w-100 h-100">
+      <section className="container mt-5">
         <div className="row">
-          <OwlCarousel
-            className="owl-theme"
-            responsive={resObj}
-            nav
-            loop
-            autoplay
-            autoplaySpeed="1000"
-            autoplayHoverPause
-            margin={20}
-          >
-            {!isLoading ? (
-              childrenArray.map((childObj) => <ChildCard childObj={childObj} />)
-            ) : (
-              <Box sx={{ width: "100%" }}>
-                <LinearProgress />
-              </Box>
-            )}
-          </OwlCarousel>
+          {!isLoading ? (
+            <OwlCarousel
+              className="owl-theme"
+              responsive={resObj}
+              nav
+              margin={20}
+            >
+              {childrenArray.map((childObj) => (
+                <ChildCard childObj={childObj} />
+              ))}
+            </OwlCarousel>
+          ) : (
+            <div className="d-flex justify-content-center align-items-center">
+            <MoonLoader color="red" />
+            </div>
+          )}
         </div>
       </section>
 
       <section>
         <h2
           className="fw-bolder fs-2 text-center text-danger my-5"
-          data-aos="fade-down"
+          data-aos="fade-left"
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1500"
         >

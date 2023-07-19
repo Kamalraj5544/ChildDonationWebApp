@@ -4,11 +4,20 @@ import "./MainNavbar.css";
 
 import { Link } from "react-router-dom";
 
+import neethiLogo from "../../assets/sdsd 2.png";
+
 const MainNavbar = () => {
   return (
     <header className="header-section">
       <nav className="navbar navbar-expand-lg bg-red">
         <div className="container-fluid bg-red">
+          <div class="navbar-brand">
+            <img
+              className="navbar-brand ps-3"
+              src={neethiLogo}
+              alt="logo"
+            />
+          </div>
           <button
             className="navbar-toggler"
             type="button"
